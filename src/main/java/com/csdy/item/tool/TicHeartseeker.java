@@ -34,15 +34,7 @@ public class TicHeartseeker extends ModifiableSwordItem {
     public TicHeartseeker(Properties properties) {
         super(properties, ToolDefinitions.HEART_SEEKER);
     }
-
-    @Override
-    public boolean onLeftClickEntity(ItemStack stack, Player player, Entity entity) {
-        if (!(entity instanceof LivingEntity target)) return super.onLeftClickEntity(stack, player, entity);
-        float baseDamage = ToolAttackUtil.getAttributeAttackDamage(ToolStack.from(stack), player, EquipmentSlot.MAINHAND);
-        target.invulnerableTime = 0;
-        DamageHandler.hurtModded(target, s -> s.getPlayerAttackWithBypassArmor(player), baseDamage*0.8f);
-        return super.onLeftClickEntity(stack, player, entity);
-    }
+    
     public List<Component> getStatInformation(IToolStackView tool, @Nullable Player player, List<Component> tooltips, TooltipKey key, TooltipFlag tooltipFlag) {
         tooltips = this.getTooltipStats(tool, player, tooltips, key, tooltipFlag);
         return tooltips;

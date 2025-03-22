@@ -30,6 +30,7 @@ import slimeknights.tconstruct.library.tools.stat.ToolStats;
 import java.util.List;
 
 public class BloodCharging extends Modifier implements MeleeDamageModifierHook, MeleeHitModifierHook,TooltipModifierHook {
+    private static final float vampirePower = 0.2f;
     private static final ResourceLocation BLOODCHARGING = new ResourceLocation(ModMain.MODID, "blood_charging");
     @Override
     public float getMeleeDamage(IToolStackView tool, ModifierEntry modifierEntry, ToolAttackContext context, float baseDamage, float damage) {
@@ -43,7 +44,7 @@ public class BloodCharging extends Modifier implements MeleeDamageModifierHook, 
         }
         ModDataNBT persistantData = tool.getPersistentData();
         float value = persistantData.getFloat(BLOODCHARGING);
-        return damage * (1 + 0.01f * value * vampire.getLevel()*0.2f);
+        return damage * (1 + 0.01f * value * vampire.getLevel()*vampirePower);
     }
 
     @Override
@@ -55,7 +56,7 @@ public class BloodCharging extends Modifier implements MeleeDamageModifierHook, 
         if (value >= 100+(modifier.getLevel()-1)*50) return;
         if (target != null && player != null) {
             VampirePlayer vampire = VampirePlayer.get(player);
-            data.putFloat(BLOODCHARGING, Math.min(vampire.getLevel()*0.2f+value,100+(modifier.getLevel()-1)*50));
+            data.putFloat(BLOODCHARGING, Math.min(vampire.getLevel()*vampirePower+value,100+(modifier.getLevel()-1)*50));
         }
     }
 
@@ -90,7 +91,6 @@ public class BloodCharging extends Modifier implements MeleeDamageModifierHook, 
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         hookBuilder.addHook(this, ModifierHooks.MELEE_DAMAGE);
         hookBuilder.addHook(this, ModifierHooks.MELEE_HIT);
-//        hookBuilder.addHook(this, ModifierHooks.CONDITIONAL_STAT);
         hookBuilder.addHook(this, ModifierHooks.TOOLTIP);
     }
 

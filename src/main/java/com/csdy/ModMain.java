@@ -1,6 +1,7 @@
 package com.csdy;
 
 
+import com.csdy.entity.register.EntityRegister;
 import com.csdy.item.ItemRegister;
 import com.csdy.item.tool.until.TicItemRegister;
 import com.csdy.modifier.register.ModifierRegister;
@@ -30,6 +31,7 @@ public class ModMain {
         ItemRegister.ITEMS.register(bus);
         ItemRegister.TINKER_ITEMS.register(bus);
 
+//        EntityRegister.ENTITIES.register(bus);
     }
 
 }

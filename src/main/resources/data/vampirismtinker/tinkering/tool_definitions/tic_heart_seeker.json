@@ -69,6 +69,10 @@
         {
           "name": "vampirismtinker:blood_charging",
           "level": 1
+        },
+        {
+          "name": "vampirismtinker:crucio",
+          "level": 1
         }
       ]
     }

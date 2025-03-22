@@ -1,6 +1,8 @@
 {
   "modifier.vampirismtinker": {
-
+    "blood_charging": "#FF0000",
+    "crucio": "#FF0000",
+    "catholic_vampire_hunt": "#8B00FF"
   }
 }
 

@@ -2,16 +2,22 @@
   "item.vampirismtinker.tic_heart_seeker": "探心者",
   "item.vampirismtinker.tic_heart_seeker.description": "一种只有吸血鬼才会使用的西洋剑,会汲取生物的血液反哺自身\n在高级吸血鬼的手中会变得更强!",
 
+  "modifier.vampirismtinker.blood_charging": "鲜血充能",
+  "modifier.vampirismtinker.blood_charging.flavor": "凡以色列家中的人，或是寄居在他们中间的外人，若吃甚么血，我必向那吃血的人变脸，把他从民中剪除 - (利末记17:10)",
+  "modifier.vampirismtinker.blood_charging.description": "探心者会汲取生命来强化自身",
+  "blood_charging.text": "鲜血充能 ",
+
+  "modifier.vampirismtinker.crucio": "钻心剜骨",
+  "modifier.vampirismtinker.crucio.flavor": "哀痛如英伦暮色中的丧钟，将呼吸凝成铅灰色的哀戚",
+  "modifier.vampirismtinker.crucio.description": "就像匠魂2迅捷剑一样",
+
   "item.vampirismtinker.tic_crucifix": "巨型十字架",
   "item.vampirismtinker.tic_crucifix.description": "一种只有猎人才会使用的巨型极端暴力武器,会对大范围内所有的生物造成可怖创伤且拥有对不死怪物十倍特攻\n在高级猎人的手中会变得更强!",
 
+  "modifier.vampirismtinker.catholic_vampire_hunt": "天主教猎杀吸血鬼",
+  "modifier.vampirismtinker.catholic_vampire_hunt.flavor": "耶稣说：“撒但退去吧！因为经上记着说：‘当拜主你的　神，单要侍奉他。’” - (马太福音4:10)",
+  "modifier.vampirismtinker.catholic_vampire_hunt.description": "巨型十字架会对附近所有的生物造成可怖创伤"
 
 
 
-
-
-
-
-  "modifier.vampirismtinker.blood_charging": "鲜血充能",
-  "blood_charging.text": "鲜血充能 "
 }
