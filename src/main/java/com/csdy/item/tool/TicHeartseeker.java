@@ -30,4 +30,7 @@ public class TicHeartseeker extends ModifiableSwordItem {
         return super.onLeftClickEntity(stack, player, entity);
     }
 
+
+
+
 }

@@ -1,4 +1,17 @@
 {
+  "item.vampirismtinker.tic_heart_seeker": "探心者",
+  "item.vampirismtinker.tic_heart_seeker.description": "一种只有吸血鬼才会使用的西洋剑,会汲取生物的血液反哺自身\n在高级吸血鬼的手中会变得更强!",
+
+  "item.vampirismtinker.tic_crucifix": "巨型十字架",
+  "item.vampirismtinker.tic_crucifix.description": "一种只有猎人才会使用的巨型极端暴力武器,会对大范围内所有的生物造成可怖创伤且拥有对不死怪物十倍特攻\n在高级猎人的手中会变得更强!",
+
+
+
+
+
+
+
+
   "modifier.vampirismtinker.blood_charging": "鲜血充能",
   "blood_charging.text": "鲜血充能 "
 }
