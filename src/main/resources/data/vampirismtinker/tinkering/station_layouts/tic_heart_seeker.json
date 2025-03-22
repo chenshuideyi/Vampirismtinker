@@ -10,8 +10,8 @@
       },
       "icon": "tconstruct:small_blade",
       "translation_key": "item.tconstruct.small_blade",
-      "x": 30,
-      "y": 60
+      "x": 51,
+      "y": 23
     },
     {
       "filter": {
@@ -19,8 +19,8 @@
       },
       "icon": "tconstruct:small_blade",
       "translation_key": "item.tconstruct.small_blade",
-      "x": 10,
-      "y": 50
+      "x": 32,
+      "y": 42
     },
 
     {
@@ -29,8 +29,8 @@
       },
       "icon": "tconstruct:tool_binding",
       "translation_key": "item.tconstruct.tool_binding",
-      "x": 25,
-      "y": 30
+      "x": 12,
+      "y": 42
     },
     {
       "filter": {
@@ -38,8 +38,8 @@
       },
       "icon": "tconstruct:tool_handle",
       "translation_key": "item.tconstruct.tool_handle",
-      "x": 45,
-      "y": 40
+      "x": 12,
+      "y": 62
     }
   ],
   "sortIndex": 0,

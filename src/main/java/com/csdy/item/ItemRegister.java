@@ -1,6 +1,7 @@
 package com.csdy.item;
 
 import com.csdy.ModMain;
+import com.csdy.item.tool.TicCrucifix;
 import com.csdy.item.tool.TicHeartseeker;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
@@ -17,4 +18,5 @@ public class ItemRegister {
     public static final ItemDeferredRegisterExtension TINKER_ITEMS = new ItemDeferredRegisterExtension(MODID);
     public static final RegistryObject<Item> TEST_ITEM = ITEMS.register("test_item", TestItem::new);
     public static final ItemObject<ModifiableItem> HEART_SEEKER = TINKER_ITEMS.register("tic_heart_seeker",()->new TicHeartseeker(new Item.Properties().stacksTo(1)));
+    public static final ItemObject<ModifiableItem> CRUCIFIX = TINKER_ITEMS.register("tic_crucifix",()->new TicCrucifix(new Item.Properties().stacksTo(1)));
 }

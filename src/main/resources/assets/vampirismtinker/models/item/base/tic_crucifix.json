@@ -1,0 +1,26 @@
+{
+  "parent": "forge:item/default",
+  "gui_light": "front",
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [ -120, -90, -16 ],
+      "translation": [7, 6, 2],
+      "scale": [2, 2, 2]
+    },
+    "thirdperson_righthand": {
+      "rotation": [ 0, 270, -16 ],
+      "translation": [0, 15, 1],
+      "scale": [ 2.5, 2.5, 5 ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [ -30, 90, -75 ],
+      "translation": [7, 6, 2],
+      "scale": [1.8, 1.8, 1.8]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [ 90, 90, -75 ],
+      "translation": [0, 15, 1],
+      "scale": [ 2.5, 2.5, 5 ]
+    }
+  }
+}
