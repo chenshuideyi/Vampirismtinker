@@ -89,13 +89,6 @@ buildscript {
         annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
         implementation 'org.javassist:javassist:3.28.0-GA'
 
-        //ProjectE
-        implementation fg.deobf("curse.maven:projecte-226410:4901949")
-
-        //MEK
-        implementation fg.deobf("curse.maven:mekanism-generators-268566:6123081")
-        implementation fg.deobf("curse.maven:mekanism-268560:6123077")
-
         implementation fg.deobf("curse.maven:jei-238222:6075247")
 
         compileOnly 'org.projectlombok:lombok:1.18.36'
@@ -106,6 +99,8 @@ buildscript {
 
         implementation fg.deobf("curse.maven:mantle-74924:6258424")
         implementation fg.deobf("curse.maven:tinkers-construct-74072:6266282")
+
+        implementation fg.deobf("curse.maven:vampirism-become-a-vampire-233029:6289561")
     }
     tasks.named('processResources', ProcessResources).configure {
         var replaceProperties = [minecraft_version   : minecraft_version, minecraft_version_range: minecraft_version_range,
