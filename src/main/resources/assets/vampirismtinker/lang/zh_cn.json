@@ -1,4 +1,5 @@
 {
+  "vampirismtinker_tool_tab": "吸血鬼工匠_武器",
   "item.vampirismtinker.tic_heart_seeker": "探心者",
   "item.vampirismtinker.tic_heart_seeker.description": "一种只有吸血鬼才会使用的西洋剑,会汲取生物的血液反哺自身\n在高级吸血鬼的手中会变得更强!",
 
@@ -16,8 +17,20 @@
 
   "modifier.vampirismtinker.catholic_vampire_hunt": "天主教猎杀吸血鬼",
   "modifier.vampirismtinker.catholic_vampire_hunt.flavor": "耶稣说：“撒但退去吧！因为经上记着说：‘当拜主你的　神，单要侍奉他。’” - (马太福音4:10)",
-  "modifier.vampirismtinker.catholic_vampire_hunt.description": "巨型十字架会对附近所有的生物造成可怖创伤"
+  "modifier.vampirismtinker.catholic_vampire_hunt.description": "巨型十字架会对附近所有的生物造成可怖创伤",
 
+  "item.vampirismtinker.hunter_metal": "猎人金属",
+  "fluid.vampirismtinker.hunter_metal": "熔融猎人金属",
+  "item.vampirismtinker.hunter_metal_bucket": "熔融猎人金属桶",
+  "item.vampirismtinker.holy_hunter_metal": "神圣猎人金属",
 
+  "material.vampirismtinker.hunter_metal": "猎人金属",
+  "material.vampirismtinker.hunter_metal.flavor": "一种经过简单祝福过的神秘金属,用于击杀邪恶的不死怪物",
+  "material.vampirismtinker.hunter_metal.encyclopedia": "对吸血鬼和亡灵生物造成额外伤害(随猎人等级提升),并点燃他们",
+  "material.vampirismtinker.hunter_metal.armor": "受到吸血鬼和亡灵生物的伤害减少(随猎人等级提升),并点燃他们",
+
+  "modifier.vampirismtinker.inscribed_prayers": "铭刻祷文",
+  "modifier.vampirismtinker.inscribed_prayers.flavor": "对不死怪物很有效",
+  "modifier.vampirismtinker.inscribed_prayers.description": "“小子们哪，你们是属神的，并且胜了他们；因为那在你们里面的，比那在世界上的更大。”, - (约翰一书 4:4)"
 
 }

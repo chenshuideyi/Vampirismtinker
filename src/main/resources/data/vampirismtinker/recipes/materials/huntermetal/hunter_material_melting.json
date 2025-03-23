@@ -1,0 +1,12 @@
+{
+  "type":"tconstruct:melting",
+  "ingredient":{
+    "item": "vampirismtinker:hunter_metal"
+  },
+  "temperature": 1200,
+  "time": 10,
+  "result":{
+    "fluid": "vampirismtinker:hunter_metal",
+    "amount": 90
+  }
+}

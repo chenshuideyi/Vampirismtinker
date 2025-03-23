@@ -1,0 +1,58 @@
+package com.csdy.vampirismtinker;
+
+
+import com.csdy.vampirismtinker.fluid.register.FludRegister;
+import com.csdy.vampirismtinker.item.ItemRegister;
+import com.csdy.vampirismtinker.modifier.register.ModifierRegister;
+
+import de.teamlapen.vampirism.misc.VampirismCreativeTab;
+import net.minecraft.data.DataGenerator;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.ItemLike;
+import net.minecraftforge.common.CreativeModeTabRegistry;
+import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.data.event.GatherDataEvent;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import slimeknights.tconstruct.library.client.data.material.AbstractMaterialSpriteProvider;
+import slimeknights.tconstruct.library.client.data.material.MaterialPartTextureGenerator;
+import slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider;
+
+import java.util.Set;
+
+//TODO: 词条效果,部件贴图
+@Mod(ModMain.MODID)
+@Mod.EventBusSubscriber(modid = ModMain.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
+public class ModMain {
+
+    public static final String MODID = "vampirismtinker";
+
+    public ModMain() {
+        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+        ModifierRegister.MODIFIERS.register(bus);
+        ItemRegister.ITEMS.register(bus);
+        ItemRegister.TINKER_ITEMS.register(bus);
+        CsdyTab.CREATIVE_MODE_TABS.register(bus);
+        FludRegister.FLUIDS.register(bus);
+
+        bus.addListener(this::addItemsToCreativeTab);
+
+
+//        EntityRegister.ENTITIES.register(bus);
+    }
+
+    private void addItemsToCreativeTab(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTabKey().equals(CreativeModeTabs.INGREDIENTS)) {
+            event.accept(ItemRegister.HUNTER_METAL_REGISTRY_OBJECT.get());
+            event.accept(ItemRegister.HOLY_HUNTER_METAL_REGISTRY_OBJECT.get());
+        }
+    }
+
+
+}
+

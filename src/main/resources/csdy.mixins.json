@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "com.csdyaop.mixins",
+  "package": "com.csdy.vampirismtinker.mixins",
   "compatibilityLevel": "JAVA_17",
   "refmap": "csdy.refmap.json",
   "mixins": [

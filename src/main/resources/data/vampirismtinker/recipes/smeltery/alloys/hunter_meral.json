@@ -1,0 +1,19 @@
+{
+
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "name": "tconstruct:molten_gold",
+      "amount": 180
+    },
+    {
+      "name": "tconstruct:molten_iron",
+      "amount": 180
+    }
+  ],
+  "result": {
+    "fluid": "vampirismtinker:hunter_metal",
+    "amount": 90
+  },
+  "temperature": 700
+}
