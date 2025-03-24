@@ -1,8 +1,10 @@
 package com.csdy.vampirismtinker;
 
 
+import com.csdy.vampirismtinker.effect.EffectsRegister;
 import com.csdy.vampirismtinker.fluid.register.FludRegister;
 import com.csdy.vampirismtinker.item.ItemRegister;
+import com.csdy.vampirismtinker.modifier.method.TestEvent;
 import com.csdy.vampirismtinker.modifier.register.ModifierRegister;
 
 import de.teamlapen.vampirism.misc.VampirismCreativeTab;
@@ -12,6 +14,7 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.CreativeModeTabRegistry;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -39,7 +42,9 @@ public class ModMain {
         ItemRegister.TINKER_ITEMS.register(bus);
         CsdyTab.CREATIVE_MODE_TABS.register(bus);
         FludRegister.FLUIDS.register(bus);
+        EffectsRegister.EFFECT.register(bus);
 
+        MinecraftForge.EVENT_BUS.register(this);
         bus.addListener(this::addItemsToCreativeTab);
 
 

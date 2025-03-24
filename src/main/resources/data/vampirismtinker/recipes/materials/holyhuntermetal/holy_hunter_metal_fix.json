@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "item": "vampirismtinker:holy_hunter_metal"
+  },
+  "value": 1,
+  "needed": 1,
+  "material": "vampirismtinker:holy_hunter_metal"
+}

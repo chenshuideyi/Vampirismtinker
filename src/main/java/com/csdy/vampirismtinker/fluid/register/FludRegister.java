@@ -1,8 +1,17 @@
 package com.csdy.vampirismtinker.fluid.register;
 
 import com.csdy.vampirismtinker.ModMain;
+import de.teamlapen.vampirism.entity.player.vampire.VampirePlayer;
+import de.teamlapen.vampirism.entity.vampire.VampireBaseEntity;
+import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.MobType;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.LiquidBlock;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
@@ -11,6 +20,7 @@ import net.minecraftforge.fluids.FluidType;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
 import slimeknights.mantle.registration.deferred.FluidDeferredRegister;
 import slimeknights.mantle.registration.object.FluidObject;
+import slimeknights.tconstruct.fluids.block.BurningLiquidBlock;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,6 +31,17 @@ import java.util.function.Supplier;
 import static slimeknights.tconstruct.fluids.block.BurningLiquidBlock.createBurning;
 
 public class FludRegister {
+    protected static boolean isVampireOrUndead(LivingEntity entity) {
+        if (entity instanceof VampireBaseEntity) {
+            return true;
+        }
+        if (entity instanceof Player player){
+            VampirePlayer vampire = VampirePlayer.get(player);
+            if (vampire.getLevel() > 0) return true;
+        }
+        return entity.getMobType() == MobType.UNDEAD;
+    }
+
     public static final FluidDeferredRegister FLUIDS = new FluidDeferredRegister(ModMain.MODID);
     protected static Map<FluidObject<ForgeFlowingFluid>,Boolean> FLUID_MAP = new HashMap<>();
     public static Set<FluidObject<ForgeFlowingFluid>> getFluids(){
@@ -47,8 +68,18 @@ public class FludRegister {
         return object;
     }
 
-    public static final FluidObject<ForgeFlowingFluid> HUNTER_METAL = registerHotBurning(FLUIDS,"hunter_metal",1535,1,4,1f,false);
+    public static final FluidObject<ForgeFlowingFluid> HUNTER_METAL = registerHotBurning(FLUIDS,"hunter_metal",777,1,4,1f,false);
 
+    public static final FluidObject<ForgeFlowingFluid> HOLY_HUNTER_METAL = registerHotBurning(FLUIDS,"holy_hunter_metal",1777,15,8,2f,false);
+
+    public static final FluidObject<ForgeFlowingFluid> HOLY_WATER = registerFluid(FLUIDS,"holy_water",7777, supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_GRAY, 15), 200, 8){
+        @Override
+        public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
+            if (!(entity instanceof LivingEntity living)) return;
+            if (isVampireOrUndead(living)) living.setHealth(living.getHealth()-1);
+
+        }
+    },false);
 
     private static FluidType.Properties hot(String name,int Temp,boolean gas) {
         return FluidType.Properties.create().density(gas?-2000:2000).viscosity(10000).temperature(Temp)

@@ -1,12 +1,20 @@
 {
   "default": [
     {
+      "name": "vampirismtinker:angel_dust",
+      "level": 1
+    },
+    {
       "name": "vampirismtinker:inscribed_prayers",
       "level": 1
     }
   ],
   "perStat" : {
     "tconstruct:armor": [
+      {
+        "name": "vampirismtinker:holy_roman_reborn_warrior",
+        "level": 1
+      },
       {
         "name": "vampirismtinker:inscribed_prayers_armor",
         "level": 1

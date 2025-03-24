@@ -1,0 +1,12 @@
+{
+  "type":"tconstruct:melting",
+  "ingredient":{
+    "tag": "vampirism:holy_water"
+  },
+  "temperature": 750,
+  "time": 10,
+  "result":{
+    "fluid": "vampirismtinker:holy_water",
+    "amount": 500
+  }
+}

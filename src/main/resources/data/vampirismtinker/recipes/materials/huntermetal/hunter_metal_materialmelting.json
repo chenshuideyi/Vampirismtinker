@@ -1,7 +1,7 @@
 {
   "type":"tconstruct:material_melting",
   "input": "vampirismtinker:hunter_metal",
-  "temperature": 900,
+  "temperature": 777,
   "result":{
     "fluid": "vampirismtinker:hunter_metal",
     "amount": 90

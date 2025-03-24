@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_fluid",
+  "fluid": {
+    "name": "vampirismtinker:holy_hunter_metal",
+    "amount":90
+  },
+  "temperature":1477,
+  "output":"vampirismtinker:holy_hunter_metal"
+}

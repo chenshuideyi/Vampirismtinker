@@ -1,5 +1,6 @@
 package com.csdy.vampirismtinker.modifier.tool;
 
+import com.csdy.vampirismtinker.modifier.HunterBaseModifer;
 import de.teamlapen.vampirism.entity.player.hunter.HunterPlayer;
 import de.teamlapen.vampirism.entity.vampire.VampireBaseEntity;
 import net.minecraft.network.chat.Component;
@@ -19,23 +20,20 @@ import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
+import static com.csdy.vampirismtinker.modifier.method.ModifierUtil.hunterPower;
+
+
 ///TODO: 封装过于搞笑,必须重构
 /// 我们安全了,暂时
-public class CatholicVampireHunt extends NoLevelsModifier implements MeleeDamageModifierHook, MeleeHitModifierHook {
-    private static final float hunterPower = 0.2f;
+/// 那么,继续简化吧
+public class CatholicVampireHunt extends HunterBaseModifer implements MeleeDamageModifierHook, MeleeHitModifierHook {
     @Override
     public float getMeleeDamage(IToolStackView iToolStackView, ModifierEntry modifierEntry, ToolAttackContext context, float baseDamage, float damage) {
+        float originalDamage = super.getMeleeDamage(iToolStackView, modifierEntry, context, baseDamage, damage);
+        if (originalDamage == 0) return 0;
         Player player = context.getPlayerAttacker();
         if (player == null) return 0;
-        boolean message = !player.getCommandSenderWorld().isClientSide;
-        int hunterLevel = hunterPlayerLevel(player);
-        if (hunterLevel < 1) {
-            if (message) {
-                player.displayClientMessage(Component.translatable("text.vampirism.can_not_be_used_faction"), true);
-            }
-            return 0;
-        }
-        return damage * hunterLevel * hunterPower;
+        return originalDamage * hunterLevelCorrection(player);
     }
 
     @Override
@@ -45,23 +43,10 @@ public class CatholicVampireHunt extends NoLevelsModifier implements MeleeDamage
         if (target != null && player != null && context.isCritical()) {
             int hunterLevel =hunterPlayerLevel(player);
             double range =  divideAndRoundUp(hunterLevel);
-            if (isVampire(target)) jesusJudgment(player, (float) player.getAttributeValue(Attributes.ATTACK_DAMAGE) * hunterLevel * hunterPower * 10f, range);
-            else jesusJudgment(player, (float) player.getAttributeValue(Attributes.ATTACK_DAMAGE) * hunterLevel * hunterPower, range);
-            ///我不他明白这是怎么运作的
-//        Level level = target.level();
-//        int intrange =  divideAndRoundUp(hunterLevel);
-//        if (level instanceof ServerLevel serverLevel) {
-//            ModifierUntil.spawnFallingBlockByPos(serverLevel, player.getOnPos(), range, range);
-//            ModifierUntil.spawnFallingBlockByPos(serverLevel, player.getOnPos(), (float) range);
-//            ModifierUntil.advancedBreakBlocks(level, player, (float) range, intrange, intrange, intrange, intrange, (float) range, true, true);
-//        }
+            if (isVampireOrUndead(target)) jesusJudgment(player, (float) player.getAttributeValue(Attributes.ATTACK_DAMAGE) * hunterLevelCorrection(player) * 10f, range);
+            else jesusJudgment(player, (float) player.getAttributeValue(Attributes.ATTACK_DAMAGE) * hunterLevelCorrection(player), range);
         }
 
-    }
-
-    private int hunterPlayerLevel(Player player){
-        HunterPlayer hunter = HunterPlayer.get(player);
-        return hunter.getLevel();
     }
 
     private void jesusJudgment(Player player, float damage, double range) {
@@ -120,9 +105,6 @@ public class CatholicVampireHunt extends NoLevelsModifier implements MeleeDamage
         entity.setDeltaMovement(finalVelocity);
     }
 
-    public static boolean isVampire(LivingEntity entity) {
-        return entity instanceof VampireBaseEntity;
-    }
 
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {

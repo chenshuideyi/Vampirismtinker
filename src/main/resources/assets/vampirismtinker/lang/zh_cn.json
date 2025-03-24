@@ -22,15 +22,41 @@
   "item.vampirismtinker.hunter_metal": "猎人金属",
   "fluid.vampirismtinker.hunter_metal": "熔融猎人金属",
   "item.vampirismtinker.hunter_metal_bucket": "熔融猎人金属桶",
+
   "item.vampirismtinker.holy_hunter_metal": "神圣猎人金属",
+  "fluid.vampirismtinker.holy_hunter_metal": "熔融神圣猎人金属",
+  "item.vampirismtinker.holy_hunter_metal_bucket": "熔融神圣猎人金属桶",
+
+  "fluid.vampirismtinker.holy_water": "圣水",
+  "item.vampirismtinker.holy_water_bucket": "圣水桶",
 
   "material.vampirismtinker.hunter_metal": "猎人金属",
-  "material.vampirismtinker.hunter_metal.flavor": "一种经过简单祝福过的神秘金属,用于击杀邪恶的不死怪物",
+  "material.vampirismtinker.hunter_metal.flavor": "一种经过简单祝福过的神秘金属,只有猎人会使用\n愿你的旨意行在地上， 如同行在天上。",
   "material.vampirismtinker.hunter_metal.encyclopedia": "对吸血鬼和亡灵生物造成额外伤害(随猎人等级提升),并点燃他们",
   "material.vampirismtinker.hunter_metal.armor": "受到吸血鬼和亡灵生物的伤害减少(随猎人等级提升),并点燃他们",
 
   "modifier.vampirismtinker.inscribed_prayers": "铭刻祷文",
   "modifier.vampirismtinker.inscribed_prayers.flavor": "对不死怪物很有效",
-  "modifier.vampirismtinker.inscribed_prayers.description": "“小子们哪，你们是属神的，并且胜了他们；因为那在你们里面的，比那在世界上的更大。”, - (约翰一书 4:4)"
+  "modifier.vampirismtinker.inscribed_prayers.description": "“小子们哪，你们是属神的，并且胜了他们；因为那在你们里面的，比那在世界上的更大。”, - (约翰一书 4:4)",
 
+  "modifier.vampirismtinker.inscribed_prayers_armor": "铭刻祷文",
+  "modifier.vampirismtinker.inscribed_prayers_armor.flavor": "对不死怪物很有效",
+  "modifier.vampirismtinker.inscribed_prayers_armor.description": "“小子们哪，你们是属神的，并且胜了他们；因为那在你们里面的，比那在世界上的更大。”, - (约翰一书 4:4)",
+
+  "material.vampirismtinker.holy_hunter_metal": "神圣猎人金属",
+  "material.vampirismtinker.holy_hunter_metal.flavor": "经过基督亲自加护过的金属,只有猎人会使用\n不叫我们遇见试探;救我们脱离凶恶。",
+  "material.vampirismtinker.holy_hunter_metal.encyclopedia": "剥夺吸血鬼和亡灵生物的生命力(随猎人等级提升),并对他们施加'惩戒'",
+  "material.vampirismtinker.holy_hunter_metal.armor": "受到吸血鬼和亡灵生物的伤害巨额减少(随猎人等级提升),获得近乎无穷无尽的的生命力",
+
+  "modifier.vampirismtinker.angel_dust": "天使之尘",
+  "modifier.vampirismtinker.angel_dust.flavor": "在我面前不死者竟敢行走",
+  "modifier.vampirismtinker.angel_dust.description": "“我父啊，倘若可行，求你叫这杯离开我；然而，不要照我的意思，只要照你的意思。”, - (马太福音 26:39)",
+
+  "modifier.vampirismtinker.holy_roman_reborn_warrior": "神圣罗马再生战士",
+  "modifier.vampirismtinker.holy_roman_reborn_warrior.flavor": "吸血鬼,不是只有你才有武器",
+  "modifier.vampirismtinker.holy_roman_reborn_warrior.description": "不要虚张声势,攻过来吧 Hurry!Hurry!",
+
+  "effect.vampirismtinker.silver_flame_brand": "银焰灼痕",
+  "text.vampirismtinker.silver_flame_brand": "圣银的辉光在皮肤上蚀刻出《启示录》经文，每一笔划都如烙铁般嘶响",
+  "death.attack.hallelu_yah": "%1$s听见孩童唱诗班用已消亡的拉丁语诵念悼词，颅骨随之共振开裂。"
 }

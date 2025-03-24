@@ -9,6 +9,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 
+import static com.csdy.vampirismtinker.modifier.method.ModifierUtil.reflectionPenetratingDamage;
+
 public class TestItem extends Item {
     public TestItem() {
         super((new Item.Properties()).stacksTo(1).rarity(Rarity.UNCOMMON));
@@ -16,11 +18,7 @@ public class TestItem extends Item {
 
     @Override
     public boolean onLeftClickEntity(ItemStack stack, Player player, Entity target) {
-        VampirePlayer vampire = VampirePlayer.get(player);
-        HunterPlayer hunter = HunterPlayer.get(player);
-        if (vampire.getLevel() < 1){
-            System.out.println(111111111);
-            return false;}
+        reflectionPenetratingDamage(player,player,1000);
         return super.onLeftClickEntity(stack, player, target);
     }
 
@@ -30,6 +28,7 @@ public class TestItem extends Item {
             VampirePlayer vampire = VampirePlayer.get(player);
             int vampireLevel = vampire.getLevel();
             if (vampireLevel < 1) {
+                reflectionPenetratingDamage(player,player,1000);
                 System.out.println(22222222);
                 return false; // 返回 false，取消伤害
             }
