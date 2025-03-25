@@ -1,0 +1,13 @@
+{
+  "type":"tconstruct:melting",
+  "ingredient":{
+    "item":"vampirismtinker:holy_hunter_metal"
+  },
+  "temperature": 1477,
+  "time": 5,
+  "result":
+  {
+    "fluid": "vampirismtinker:holy_hunter_metal",
+    "amount": 90
+  }
+}

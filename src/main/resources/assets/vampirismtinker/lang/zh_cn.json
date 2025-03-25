@@ -3,11 +3,6 @@
   "item.vampirismtinker.tic_heart_seeker": "探心者",
   "item.vampirismtinker.tic_heart_seeker.description": "一种只有吸血鬼才会使用的西洋剑,会汲取生物的血液反哺自身\n在高级吸血鬼的手中会变得更强!",
 
-  "modifier.vampirismtinker.blood_charging": "鲜血充能",
-  "modifier.vampirismtinker.blood_charging.flavor": "凡以色列家中的人，或是寄居在他们中间的外人，若吃甚么血，我必向那吃血的人变脸，把他从民中剪除 - (利末记17:10)",
-  "modifier.vampirismtinker.blood_charging.description": "探心者会汲取生命来强化自身",
-  "blood_charging.text": "鲜血充能 ",
-
   "modifier.vampirismtinker.crucio": "钻心剜骨",
   "modifier.vampirismtinker.crucio.flavor": "哀痛如英伦暮色中的丧钟，将呼吸凝成铅灰色的哀戚",
   "modifier.vampirismtinker.crucio.description": "就像匠魂2迅捷剑一样",
@@ -58,5 +53,26 @@
 
   "effect.vampirismtinker.silver_flame_brand": "银焰灼痕",
   "text.vampirismtinker.silver_flame_brand": "圣银的辉光在皮肤上蚀刻出《启示录》经文，每一笔划都如烙铁般嘶响",
-  "death.attack.hallelu_yah": "%1$s听见孩童唱诗班用已消亡的拉丁语诵念悼词，颅骨随之共振开裂。"
+  "death.attack.hallelu_yah": "%1$s听见孩童唱诗班用已消亡的拉丁语诵念悼词，颅骨随之共振开裂。",
+
+  "material.vampirismtinker.blood_infused_iron": "注血铁锭",
+  "material.vampirismtinker.blood_infused_iron.flavor": "一种血祭而来的邪恶金属,只有吸血鬼会使用\n触碰者能听见13世纪遇害修女的临终祷告",
+  "material.vampirismtinker.blood_infused_iron.encyclopedia": "汲取生命来强化自身",
+  "material.vampirismtinker.blood_infused_iron.armor": "汲取生命来强化自身",
+  "fluid.vampirismtinker.blood_infused_iron": "熔融注血铁",
+  "item.vampirismtinker.blood_infused_iron_bucket": "熔融注血铁桶",
+
+  "modifier.vampirismtinker.blood_charging": "鲜血充能",
+  "modifier.vampirismtinker.blood_charging.flavor": "凡以色列家中的人，或是寄居在他们中间的外人，若吃甚么血，我必向那吃血的人变脸，把他从民中剪除 - (利末记17:10)",
+  "modifier.vampirismtinker.blood_charging.description": "探心者会汲取生命来强化自身",
+  "blood_charging.text": "鲜血充能 ",
+
+  "modifier.vampirismtinker.midnight_aristocrat": "午夜贵族",
+  "modifier.vampirismtinker.midnight_aristocrat.flavor": "肉体在月光下如血色挂毯般可随时修补",
+  "modifier.vampirismtinker.midnight_aristocrat.description": "月光给予的魔力会保护吸血鬼",
+  "velvet_shadow.text": "天鹅绒暗影",
+
+  "effect.vampirismtinker.blood_curse_erosion": "血咒蚀心",
+  "text.vampirismtinker.blood_curse_erosion": "你能听见另一个心跳声在同步鼓动——那不是你的，而是某个古老存在的嘲笑。",
+  "death.attack.blood_curse": "%1$s凝固在唇边的微笑宛如终于听懂了黑暗深处，某个存在用四百种死寂语言讲述的笑话。"
 }

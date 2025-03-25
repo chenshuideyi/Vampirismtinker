@@ -1,0 +1,12 @@
+{
+  "type":"tconstruct:melting",
+  "ingredient":{
+    "item": "vampirism:pure_blood_0"
+  },
+  "temperature": 750,
+  "time": 1,
+  "result":{
+    "fluid": "vampirism:blood",
+    "amount": 500
+  }
+}

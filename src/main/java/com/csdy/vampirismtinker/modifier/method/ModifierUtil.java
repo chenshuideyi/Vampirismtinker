@@ -15,9 +15,6 @@ import java.util.Map;
 
 public class ModifierUtil {
 
-    //默认等级加成
-    public static final float hunterPower = 0.2f;
-    public static final float vampirePower = 0.2f;
     //DATA_HEALTH_ID
     private static final EntityDataAccessor<Float> DATA_HEALTH_ID = getHealthDataAccessor();
 

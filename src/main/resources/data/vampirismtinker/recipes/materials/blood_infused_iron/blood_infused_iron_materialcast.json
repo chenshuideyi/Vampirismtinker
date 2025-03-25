@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_fluid",
+  "fluid": {
+    "name": "vampirismtinker:blood_infused_iron",
+    "amount":90
+  },
+  "temperature":666,
+  "output":"vampirismtinker:blood_infused_iron"
+}

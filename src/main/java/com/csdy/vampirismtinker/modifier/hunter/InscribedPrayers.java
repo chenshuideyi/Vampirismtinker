@@ -24,7 +24,6 @@ import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 
 import javax.annotation.Nullable;
 
-import static com.csdy.vampirismtinker.modifier.method.ModifierUtil.hunterPower;
 
 public class InscribedPrayers extends HunterBaseModifer implements MeleeHitModifierHook, MeleeDamageModifierHook, ProjectileHitModifierHook {
 

@@ -72,6 +72,8 @@ public class FludRegister {
 
     public static final FluidObject<ForgeFlowingFluid> HOLY_HUNTER_METAL = registerHotBurning(FLUIDS,"holy_hunter_metal",1777,15,8,2f,false);
 
+    public static final FluidObject<ForgeFlowingFluid> BLOOD_INFUSED_IRON = registerHotBurning(FLUIDS,"blood_infused_iron",666,1,4,1f,false);
+
     public static final FluidObject<ForgeFlowingFluid> HOLY_WATER = registerFluid(FLUIDS,"holy_water",7777, supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_GRAY, 15), 200, 8){
         @Override
         public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {

@@ -1,0 +1,16 @@
+{
+  "default": [
+    {
+      "name": "vampirismtinker:blood_charging",
+      "level": 1
+    }
+  ],
+  "perStat" : {
+    "tconstruct:armor": [
+      {
+        "name": "vampirismtinker:midnight_aristocrat",
+        "level": 1
+      }
+    ]
+  }
+}

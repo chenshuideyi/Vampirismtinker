@@ -20,8 +20,6 @@ import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
-import static com.csdy.vampirismtinker.modifier.method.ModifierUtil.hunterPower;
-
 
 ///TODO: 封装过于搞笑,必须重构
 /// 我们安全了,暂时

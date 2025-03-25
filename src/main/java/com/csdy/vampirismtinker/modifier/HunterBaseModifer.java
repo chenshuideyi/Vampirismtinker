@@ -26,10 +26,9 @@ import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import static com.csdy.vampirismtinker.modifier.method.ModifierUtil.forceAddEffect;
-import static com.csdy.vampirismtinker.modifier.method.ModifierUtil.hunterPower;
 
 public class HunterBaseModifer extends Modifier implements MeleeDamageModifierHook,InventoryTickModifierHook, EquipmentChangeModifierHook {
-
+    public static final float hunterPower = 0.2f;
     @Override
     public float getMeleeDamage(IToolStackView iToolStackView, ModifierEntry modifierEntry, ToolAttackContext context, float baseDamage, float damage) {
         Player player = context.getPlayerAttacker();
@@ -45,9 +44,12 @@ public class HunterBaseModifer extends Modifier implements MeleeDamageModifierHo
         return damage;
     }
 
-    protected int hunterPlayerLevel(Player player){
+    protected int hunterPlayerLevel(Player player) {
+        if (player == null || !player.isAlive()) {
+            return 0; // 默认值
+        }
         HunterPlayer hunter = HunterPlayer.get(player);
-        return hunter.getLevel();
+        return hunter != null ? hunter.getLevel() : 0;
     }
 
     protected float hunterLevelCorrection(Player player){
@@ -87,6 +89,7 @@ public class HunterBaseModifer extends Modifier implements MeleeDamageModifierHo
                 boolean message = !player.getCommandSenderWorld().isClientSide;
                 if (!message) return;
                 if (vampirePlayerLevel(player) > 0) {
+                    if (!player.isAlive()) return;
                     player.displayClientMessage(Component.translatable("text.vampirismtinker.silver_flame_brand"), true);
                 } else
                     player.displayClientMessage(Component.translatable("text.vampirism.can_not_be_used_faction"), true);
@@ -98,7 +101,7 @@ public class HunterBaseModifer extends Modifier implements MeleeDamageModifierHo
         if (!(holder instanceof Player player)) return;
         if (isCorrectSlot && hunterPlayerLevel(player) < 1) {
             if (vampirePlayerLevel(player) > 0) {
-                //这里写特殊buff
+                if (!player.isAlive()) return;
                 forceAddEffect(holder, (new MobEffectInstance(EffectsRegister.SILVER_FLAME_BRAND.get(), 140, 0)));
                 return;
             }

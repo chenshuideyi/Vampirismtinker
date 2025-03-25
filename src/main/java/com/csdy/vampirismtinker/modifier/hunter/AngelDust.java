@@ -23,7 +23,6 @@ import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
 import javax.annotation.Nullable;
 
-import static com.csdy.vampirismtinker.modifier.method.ModifierUtil.hunterPower;
 import static com.csdy.vampirismtinker.modifier.method.ModifierUtil.reflectionPenetratingDamage;
 import static java.lang.Math.ceil;
 
