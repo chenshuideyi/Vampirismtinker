@@ -12,6 +12,12 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import org.jetbrains.annotations.NotNull;
 
 public class SilverflameBrand extends MobEffect {
+    /**
+     * 具体实现:
+     *
+     * @see com.csdy.vampirismtinker.mixins.LivingHealthMixin
+     */
+
     private static final String SPEED_MODIFIER_UUID = "7107DE5E-7CE8-4030-940E-514C1F160891"; // 唯一标识符
     private static final double SPEED_REDUCTION = -0.5;
 
@@ -25,13 +31,11 @@ public class SilverflameBrand extends MobEffect {
         this.addAttributeModifier(Attributes.ATTACK_DAMAGE, ATTACK_DAMAGE_MODIFIER_UUID, ATTACK_DAMAGE_REDUCTION, AttributeModifier.Operation.MULTIPLY_TOTAL);
     }
 
-    // 每 tick 执行的效果逻辑
     @Override
     public void applyEffectTick(LivingEntity entity, int amplifier) {
         entity.hurt(entity.damageSources().magic(), 7.0F);
     }
 
-    // 要求每 tick 都触发效果
     @Override
     public boolean isDurationEffectTick(int duration, int amplifier) {
         return true;
@@ -40,6 +44,6 @@ public class SilverflameBrand extends MobEffect {
     @Override
     public void removeAttributeModifiers(@NotNull LivingEntity entity, @NotNull AttributeMap attributeMap, int amplifier) {
         super.removeAttributeModifiers(entity, attributeMap, amplifier);
-        entity.hurt(new DamageSource(Holder.direct(new DamageType("hallelu_yah", 0f))), 70F);
+        entity.hurt(new DamageSource(Holder.direct(new DamageType("hallelu_yah", 0f))), 77F);
     }
 }

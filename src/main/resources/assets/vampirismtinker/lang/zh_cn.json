@@ -58,7 +58,7 @@
   "material.vampirismtinker.blood_infused_iron": "注血铁锭",
   "material.vampirismtinker.blood_infused_iron.flavor": "一种血祭而来的邪恶金属,只有吸血鬼会使用\n触碰者能听见13世纪遇害修女的临终祷告",
   "material.vampirismtinker.blood_infused_iron.encyclopedia": "汲取生命来强化自身",
-  "material.vampirismtinker.blood_infused_iron.armor": "汲取生命来强化自身",
+  "material.vampirismtinker.blood_infused_iron.armor": "在不被阳光照射的情况下提供超自然恢复力",
   "fluid.vampirismtinker.blood_infused_iron": "熔融注血铁",
   "item.vampirismtinker.blood_infused_iron_bucket": "熔融注血铁桶",
 
@@ -68,11 +68,30 @@
   "blood_charging.text": "鲜血充能 ",
 
   "modifier.vampirismtinker.midnight_aristocrat": "午夜贵族",
-  "modifier.vampirismtinker.midnight_aristocrat.flavor": "肉体在月光下如血色挂毯般可随时修补",
-  "modifier.vampirismtinker.midnight_aristocrat.description": "月光给予的魔力会保护吸血鬼",
-  "velvet_shadow.text": "天鹅绒暗影",
+  "modifier.vampirismtinker.midnight_aristocrat.flavor": "肉体如血色挂毯般可随时修补",
+  "modifier.vampirismtinker.midnight_aristocrat.description": "在无光的地方,你很难杀死吸血鬼",
+  "midnight_aristocrat.text": "午夜贵族",
 
   "effect.vampirismtinker.blood_curse_erosion": "血咒蚀心",
   "text.vampirismtinker.blood_curse_erosion": "你能听见另一个心跳声在同步鼓动——那不是你的，而是某个古老存在的嘲笑。",
-  "death.attack.blood_curse": "%1$s凝固在唇边的微笑宛如终于听懂了黑暗深处，某个存在用四百种死寂语言讲述的笑话。"
+  "death.attack.blood_curse": "%1$s凝固在唇边的微笑宛如终于听懂了黑暗深处，某个存在用四百种死寂语言讲述的笑话。",
+
+  "material.vampirismtinker.blood_infused_enhanced_iron": "强化注血铁锭",
+  "material.vampirismtinker.blood_infused_enhanced_iron.flavor": "一种只有吸血鬼会使用的邪恶金属,凝聚了高等吸血鬼的魔力\n触碰者能听见13世纪遇害修女的临终祷告",
+  "material.vampirismtinker.blood_infused_enhanced_iron.encyclopedia": "施加猩红热",
+  "material.vampirismtinker.blood_infused_enhanced_iron.armor": "在不被阳光照射的情况下优雅的避开攻击",
+  "fluid.vampirismtinker.blood_infused_enhanced_iron": "熔融强化注血铁",
+  "item.vampirismtinker.blood_infused_enhanced_iron_bucket": "熔融强化注血铁桶",
+
+  "modifier.vampirismtinker.scarlet_frenzy": "猩红热",
+  "modifier.vampirismtinker.scarlet_frenzy.flavor": "被吸血鬼伤害的生物会染上猩红热",
+  "modifier.vampirismtinker.scarlet_frenzy.description": "处于猩红热状态下的生物会持续流逝生命值",
+
+  "effect.vampirismtinker.scarlet_frenzy": "猩红热",
+  "death.attack.scarlet_frenzy": "%1$s流干了血",
+
+  "modifier.vampirismtinker.crimson_mist_dash": "深红迷雾",
+  "modifier.vampirismtinker.crimson_mist_dash.flavor": "变化为一阵雾",
+  "modifier.vampirismtinker.crimson_mist_dash.description": "没有阳光的照射,吸血鬼可以雾化自己避开攻击"
+
 }

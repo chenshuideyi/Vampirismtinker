@@ -2,6 +2,10 @@
   "default": [
     {
       "name": "vampirismtinker:blood_charging",
+      "level": 2
+    },
+    {
+      "name": "vampirismtinker:scarlet_frenzy",
       "level": 1
     }
   ],
@@ -9,6 +13,10 @@
     "tconstruct:armor": [
       {
         "name": "vampirismtinker:midnight_aristocrat",
+        "level": 1
+      },
+      {
+        "name": "vampirismtinker:crimson_mist_dash",
         "level": 1
       }
     ]

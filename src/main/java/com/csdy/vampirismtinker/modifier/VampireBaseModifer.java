@@ -1,12 +1,13 @@
 package com.csdy.vampirismtinker.modifier;
 
 import com.csdy.vampirismtinker.effect.EffectsRegister;
+import de.teamlapen.vampirism.api.VampirismAPI;
+import de.teamlapen.vampirism.api.entity.player.vampire.IVampirePlayer;
 import de.teamlapen.vampirism.entity.player.hunter.HunterPlayer;
 import de.teamlapen.vampirism.entity.player.vampire.VampirePlayer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -22,12 +23,16 @@ import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.context.EquipmentChangeContext;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
-import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 
 import static com.csdy.vampirismtinker.modifier.method.ModifierUtil.forceAddEffect;
 
 public class VampireBaseModifer extends Modifier implements MeleeDamageModifierHook, InventoryTickModifierHook, EquipmentChangeModifierHook {
     public static final float vampirePower = 0.2f;
+    protected static boolean isTakingSundamage(Player player) {
+        IVampirePlayer vampire = VampirismAPI.getVampirePlayer(player).orElse(null);
+        return vampire != null && vampire.isGettingSundamage(player.level());
+    }
+
     @Override
     public float getMeleeDamage(IToolStackView tool, ModifierEntry entry, ToolAttackContext context, float baseDamage, float damage) {
         Player player = context.getPlayerAttacker();

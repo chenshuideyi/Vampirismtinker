@@ -1,0 +1,5 @@
+{
+  "color": "FF0000",
+  "flowing": "vampirismtinker:block/fluid/blood_infused_iron/flowing",
+  "still": "vampirismtinker:block/fluid/blood_infused_iron/still"
+}

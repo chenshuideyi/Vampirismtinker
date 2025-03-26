@@ -6,6 +6,8 @@ import de.teamlapen.vampirism.entity.player.vampire.VampirePlayer;
 import de.teamlapen.vampirism.entity.vampire.VampireBaseEntity;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
@@ -18,7 +20,10 @@ import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.armor.EquipmentChangeModifierHook;
+import slimeknights.tconstruct.library.modifiers.hook.build.ConditionalStatModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.combat.MeleeDamageModifierHook;
+import slimeknights.tconstruct.library.modifiers.hook.interaction.GeneralInteractionModifierHook;
+import slimeknights.tconstruct.library.modifiers.hook.interaction.InteractionSource;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.InventoryTickModifierHook;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.context.EquipmentChangeContext;
@@ -26,6 +31,8 @@ import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import static com.csdy.vampirismtinker.modifier.method.ModifierUtil.forceAddEffect;
+import static net.minecraft.world.InteractionResult.CONSUME;
+import static net.minecraft.world.InteractionResult.SUCCESS;
 
 public class HunterBaseModifer extends Modifier implements MeleeDamageModifierHook,InventoryTickModifierHook, EquipmentChangeModifierHook {
     public static final float hunterPower = 0.2f;
@@ -109,8 +116,9 @@ public class HunterBaseModifer extends Modifier implements MeleeDamageModifierHo
             forceAddEffect(holder, (new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 140, 0)));
         }
 
-
     }
+
+
 
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {

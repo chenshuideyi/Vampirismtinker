@@ -19,7 +19,7 @@ public abstract class LivingHealthMixin {
     )
     private void onHeal(float p_21116_, CallbackInfo cir) {
         LivingEntity entity = (LivingEntity)(Object)this;
-        if (entity.hasEffect(EffectsRegister.SCARLET_FRENZY.get())) {
+        if (entity.hasEffect(EffectsRegister.SILVER_FLAME_BRAND.get())) {
             entity.playSound(SoundEvents.SKELETON_HURT, 0.5F, 1.5F);
             cir.cancel();
         }

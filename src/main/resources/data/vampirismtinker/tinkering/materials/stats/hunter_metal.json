@@ -13,17 +13,6 @@
       "mining_tier": "minecraft:iron",
       "melee_attack": 3.7
     },
-    "tconstruct:limb": {
-      "durability": 777,
-      "draw_speed": 0.7,
-      "velocity":  0.7,
-      "accuracy": -0.7
-    },
-    "tconstruct:grip": {
-      "durability": 0.07,
-      "accuracy": -0.7,
-      "melee_damage": 2.7
-    },
     "tconstruct:maille": {},
     "tconstruct:plating_helmet": {
       "armor": 3.7,

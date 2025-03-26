@@ -1,0 +1,19 @@
+{
+
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "name": "vampirismtinker:holy_water",
+      "amount": 6000
+    },
+    {
+      "name": "tconstruct:molten_iron",
+      "amount": 90
+    }
+  ],
+  "result": {
+    "fluid": "vampirismtinker:hunter_metal",
+    "amount": 90
+  },
+  "temperature": 1477
+}

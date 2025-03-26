@@ -7,13 +7,15 @@
     "inscribed_prayers_armor": "#65B1CC",
     "angel_dust": "#95E2FC",
     "holy_roman_reborn_warrior": "#FFECA1",
-    "midnight_aristocrat": "#793536"
-
+    "midnight_aristocrat": "#793536",
+    "scarlet_frenzy": "#FF0000",
+    "crimson_mist_dash": "#FF0000"
   },
   "material.vampirismtinker": {
     "hunter_metal": "#65B1CC",
     "holy_hunter_metal": "#95E2FC",
-    "blood_infused_iron": "#FF0000"
+    "blood_infused_iron": "#F88889",
+    "blood_infused_enhanced_iron": "#FF0000"
   }
 }
 

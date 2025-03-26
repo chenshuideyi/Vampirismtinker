@@ -2,12 +2,14 @@ package com.csdy.vampirismtinker.modifier.register;
 
 import com.csdy.vampirismtinker.modifier.armor.hunter.HolyRomanRebornWarrior;
 import com.csdy.vampirismtinker.modifier.armor.hunter.InscribedPrayersArmor;
+import com.csdy.vampirismtinker.modifier.armor.vampire.CrimsonMistDash;
 import com.csdy.vampirismtinker.modifier.armor.vampire.MidnightAristocrat;
 import com.csdy.vampirismtinker.modifier.hunter.AngelDust;
 import com.csdy.vampirismtinker.modifier.hunter.InscribedPrayers;
 import com.csdy.vampirismtinker.modifier.tool.CatholicVampireHunt;
 import com.csdy.vampirismtinker.modifier.vampire.BloodCharging;
 import com.csdy.vampirismtinker.modifier.tool.Crucio;
+import com.csdy.vampirismtinker.modifier.vampire.ScarletFrenzy;
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
 import slimeknights.tconstruct.library.modifiers.util.StaticModifier;
 
@@ -26,8 +28,9 @@ public class ModifierRegister {
 
     //吸血鬼相关
     public static final StaticModifier<BloodCharging> BLOOD_CHARGING_STATIC_MODIFIER = MODIFIERS.register("blood_charging", BloodCharging::new);
+    public static final StaticModifier<ScarletFrenzy> SCARLET_FRENZY_STATIC_MODIFIER = MODIFIERS.register("scarlet_frenzy", ScarletFrenzy::new);
     public static final StaticModifier<MidnightAristocrat> MIDNIGHT_ARISTOCRAT_STATIC_MODIFIER = MODIFIERS.register("midnight_aristocrat", MidnightAristocrat::new);
-
+    public static final StaticModifier<CrimsonMistDash> CRIMSON_MIST_DASH_STATIC_MODIFIER = MODIFIERS.register("crimson_mist_dash", CrimsonMistDash::new);
 
 
 

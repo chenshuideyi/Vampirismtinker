@@ -29,16 +29,16 @@ import java.util.List;
 
 public class MidnightAristocrat extends VampireBaseModifer implements OnAttackedModifierHook, TooltipModifierHook {
 
-    private static final ResourceLocation VELVET_SHADOW = new ResourceLocation(ModMain.MODID, "velvet_shadow");
+    private static final ResourceLocation MIDNIGHT_ARISTOCRAT = new ResourceLocation(ModMain.MODID, "midnight_aristocrat");
 
 
     @Override
     public void onAttacked(IToolStackView tool, ModifierEntry entry, EquipmentContext context, EquipmentSlot slot, DamageSource damageSource, float amount, boolean isDirectDamage) {
         if (!(context.getEntity() instanceof Player player)) return;
-        if ((!(player.level() instanceof ServerLevel serverLevel)) || serverLevel.getDayTime()> 13000) return;
+        if (isTakingSundamage(player)) return;
         ModDataNBT data = tool.getPersistentData();
-        float value = data.getFloat(VELVET_SHADOW);
-        data.putFloat(VELVET_SHADOW, Math.max(value - amount,0));
+        float value = data.getFloat(MIDNIGHT_ARISTOCRAT);
+        data.putFloat(MIDNIGHT_ARISTOCRAT, Math.max(value - amount,0));
         player.heal(amount/2);
     }
 
@@ -46,12 +46,11 @@ public class MidnightAristocrat extends VampireBaseModifer implements OnAttacked
     public void onInventoryTick(IToolStackView tool, ModifierEntry entry, Level world, LivingEntity holder, int itemSlot, boolean isSelected, boolean isCorrectSlot, ItemStack stack) {
         int level = entry.getLevel();
         if (holder instanceof Player player && isCorrectSlot) {
-            if ((world instanceof ServerLevel serverLevel) && serverLevel.getDayTime()> 13000) {
-                ModDataNBT data = tool.getPersistentData();
-                float value = data.getFloat(VELVET_SHADOW);
-                if (value >= level * 50) return;
-                data.putFloat(VELVET_SHADOW, Math.min(vampireLevelCorrection(player) + value, level * 50));
-            }
+            if (isTakingSundamage(player)) return;
+            ModDataNBT data = tool.getPersistentData();
+            float value = data.getFloat(MIDNIGHT_ARISTOCRAT);
+            if (value >= level * 50) return;
+            data.putFloat(MIDNIGHT_ARISTOCRAT, Math.min(vampireLevelCorrection(player) + value, level * 50));
         }
 
         super.onInventoryTick(tool, entry, world, holder, itemSlot, isSelected, isCorrectSlot, stack);
@@ -60,8 +59,8 @@ public class MidnightAristocrat extends VampireBaseModifer implements OnAttacked
     @Override
     public void addTooltip(IToolStackView tool, ModifierEntry modifier, @Nullable Player player, List<Component> tooltip, slimeknights.mantle.client.TooltipKey tooltipKey, TooltipFlag tooltipFlag) {
         ModDataNBT persistantData = tool.getPersistentData();
-        float value = persistantData.getFloat(VELVET_SHADOW);
-        tooltip.add(Component.translatable("velvet_shadow.text").withStyle(ChatFormatting.GRAY).append(value+"%"));
+        float value = persistantData.getFloat(MIDNIGHT_ARISTOCRAT);
+        tooltip.add(Component.translatable("midnight_aristocrat.text").withStyle(ChatFormatting.GRAY).append(value+"%"));
     }
 
     @Override
