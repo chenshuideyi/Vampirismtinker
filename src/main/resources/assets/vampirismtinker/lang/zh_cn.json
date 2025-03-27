@@ -40,12 +40,13 @@
 
   "material.vampirismtinker.holy_hunter_metal": "神圣猎人金属",
   "material.vampirismtinker.holy_hunter_metal.flavor": "经过基督亲自加护过的金属,只有猎人会使用\n不叫我们遇见试探;救我们脱离凶恶。",
-  "material.vampirismtinker.holy_hunter_metal.encyclopedia": "剥夺吸血鬼和亡灵生物的生命力(随猎人等级提升),并对他们施加'惩戒'",
+  "material.vampirismtinker.holy_hunter_metal.encyclopedia": "剥夺吸血鬼和亡灵生物的生命力(随猎人等级提升),并对破坏他们的再生能力",
   "material.vampirismtinker.holy_hunter_metal.armor": "受到吸血鬼和亡灵生物的伤害巨额减少(随猎人等级提升),获得近乎无穷无尽的的生命力",
 
   "modifier.vampirismtinker.angel_dust": "天使之尘",
   "modifier.vampirismtinker.angel_dust.flavor": "在我面前不死者竟敢行走",
   "modifier.vampirismtinker.angel_dust.description": "“我父啊，倘若可行，求你叫这杯离开我；然而，不要照我的意思，只要照你的意思。”, - (马太福音 26:39)",
+  "effect.vampirismtinker.judgment": "审判",
 
   "modifier.vampirismtinker.holy_roman_reborn_warrior": "神圣罗马再生战士",
   "modifier.vampirismtinker.holy_roman_reborn_warrior.flavor": "吸血鬼,不是只有你才有武器",
@@ -79,7 +80,7 @@
   "material.vampirismtinker.blood_infused_enhanced_iron": "强化注血铁锭",
   "material.vampirismtinker.blood_infused_enhanced_iron.flavor": "一种只有吸血鬼会使用的邪恶金属,凝聚了高等吸血鬼的魔力\n触碰者能听见13世纪遇害修女的临终祷告",
   "material.vampirismtinker.blood_infused_enhanced_iron.encyclopedia": "施加猩红热",
-  "material.vampirismtinker.blood_infused_enhanced_iron.armor": "在不被阳光照射的情况下优雅的避开攻击",
+  "material.vampirismtinker.blood_infused_enhanced_iron.armor": "在不被阳光照射的情况下优雅的避开攻击,失去自己的身体护甲来复活",
   "fluid.vampirismtinker.blood_infused_enhanced_iron": "熔融强化注血铁",
   "item.vampirismtinker.blood_infused_enhanced_iron_bucket": "熔融强化注血铁桶",
 
@@ -92,6 +93,10 @@
 
   "modifier.vampirismtinker.crimson_mist_dash": "深红迷雾",
   "modifier.vampirismtinker.crimson_mist_dash.flavor": "变化为一阵雾",
-  "modifier.vampirismtinker.crimson_mist_dash.description": "没有阳光的照射,吸血鬼可以雾化自己避开攻击"
+  "modifier.vampirismtinker.crimson_mist_dash.description": "没有阳光的照射,吸血鬼可以雾化自己避开攻击",
+
+  "modifier.vampirismtinker.un_dying": "不死",
+  "modifier.vampirismtinker.un_dying.flavor": "午夜的君王",
+  "modifier.vampirismtinker.un_dying.description": "当吸血鬼死亡在无光的地方,他们会失去自己的身体护甲一阵子并复活"
 
 }

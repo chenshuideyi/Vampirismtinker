@@ -12,11 +12,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import org.jetbrains.annotations.NotNull;
 
 public class SilverflameBrand extends MobEffect {
-    /**
-     * 具体实现:
-     *
-     * @see com.csdy.vampirismtinker.mixins.LivingHealthMixin
-     */
+
 
     private static final String SPEED_MODIFIER_UUID = "7107DE5E-7CE8-4030-940E-514C1F160891"; // 唯一标识符
     private static final double SPEED_REDUCTION = -0.5;

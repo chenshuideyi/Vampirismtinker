@@ -2,7 +2,7 @@
   "type": "tconstruct:alloy",
   "inputs": [
     {
-      "tag": "vampirism:impure_blood",
+      "tag": "vampirism:vampirism_impure_blood",
       "amount": 500
     },
     {
@@ -14,5 +14,5 @@
     "fluid": "vampirismtinker:blood_infused_enhanced_iron",
     "amount": 270
   },
-  "temperature": 666
+  "temperature": 1466
 }

@@ -4,6 +4,7 @@ import com.csdy.vampirismtinker.modifier.armor.hunter.HolyRomanRebornWarrior;
 import com.csdy.vampirismtinker.modifier.armor.hunter.InscribedPrayersArmor;
 import com.csdy.vampirismtinker.modifier.armor.vampire.CrimsonMistDash;
 import com.csdy.vampirismtinker.modifier.armor.vampire.MidnightAristocrat;
+import com.csdy.vampirismtinker.modifier.armor.vampire.UnDying;
 import com.csdy.vampirismtinker.modifier.hunter.AngelDust;
 import com.csdy.vampirismtinker.modifier.hunter.InscribedPrayers;
 import com.csdy.vampirismtinker.modifier.tool.CatholicVampireHunt;
@@ -31,7 +32,7 @@ public class ModifierRegister {
     public static final StaticModifier<ScarletFrenzy> SCARLET_FRENZY_STATIC_MODIFIER = MODIFIERS.register("scarlet_frenzy", ScarletFrenzy::new);
     public static final StaticModifier<MidnightAristocrat> MIDNIGHT_ARISTOCRAT_STATIC_MODIFIER = MODIFIERS.register("midnight_aristocrat", MidnightAristocrat::new);
     public static final StaticModifier<CrimsonMistDash> CRIMSON_MIST_DASH_STATIC_MODIFIER = MODIFIERS.register("crimson_mist_dash", CrimsonMistDash::new);
-
+    public static final StaticModifier<UnDying> UN_DYING_STATIC_MODIFIER = MODIFIERS.register("un_dying", UnDying::new);
 
 
 

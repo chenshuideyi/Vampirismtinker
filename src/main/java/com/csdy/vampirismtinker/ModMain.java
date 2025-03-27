@@ -28,7 +28,7 @@ import slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider;
 
 import java.util.Set;
 
-//TODO: 词条效果,部件贴图
+//TODO: 吸血鬼免死,阵营平衡调整
 @Mod(ModMain.MODID)
 @Mod.EventBusSubscriber(modid = ModMain.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModMain {
