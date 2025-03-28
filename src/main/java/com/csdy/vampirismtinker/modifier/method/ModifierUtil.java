@@ -51,6 +51,7 @@ public class ModifierUtil {
     ///target 目标<br/>
     ///player 玩家<br/>
     ///float 造成的伤害<br/>
+    ///  打穿王八壳,放手一搏吧<br/>
     /// 不是永远都有用,,,,,
     public static void reflectionPenetratingDamage(Entity target, Player player, float value) {
         if (!(target instanceof LivingEntity living)) return;
@@ -63,6 +64,22 @@ public class ModifierUtil {
         }
     }
 
+    ///反射设置生命值<br/>
+    ///target 目标<br/>
+    ///player 玩家<br/>
+    ///float 设置的值<br/>
+    /// 打穿王八壳,放手一搏吧<br/>
+    /// 不是永远都有用,,,,,
+    public static void reflectionSetHealth(Entity target, Player player, float value) {
+        if (!(target instanceof LivingEntity living)) return;
+        if (DATA_HEALTH_ID == null) return;
+        living.getEntityData().set(DATA_HEALTH_ID, value);
+        if (living.getHealth() <= 0.0F) {
+            living.die(living.level().damageSources().playerAttack(player));
+        }
+    }
+
+
     /**
      * 强制添加效果实例（包括自定义效果）
      * @param entity 目标生物
@@ -73,6 +90,7 @@ public class ModifierUtil {
             // 获取效果Map字段（根据mapping调整字段名）
             ///f_20945_
             Field effectsField = LivingEntity.class.getDeclaredField("f_20945_");
+//            Field effectsField = LivingEntity.class.getDeclaredField("activeEffects");
             effectsField.setAccessible(true);
 
             @SuppressWarnings("unchecked")

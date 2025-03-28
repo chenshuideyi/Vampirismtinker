@@ -27,46 +27,27 @@ import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 
 import java.util.List;
 
-public class MidnightAristocrat extends VampireBaseModifer implements OnAttackedModifierHook, TooltipModifierHook {
-
-    private static final ResourceLocation MIDNIGHT_ARISTOCRAT = new ResourceLocation(ModMain.MODID, "midnight_aristocrat");
-
+public class MidnightAristocrat extends VampireBaseModifer implements OnAttackedModifierHook {
 
     @Override
     public void onAttacked(IToolStackView tool, ModifierEntry entry, EquipmentContext context, EquipmentSlot slot, DamageSource damageSource, float amount, boolean isDirectDamage) {
         if (!(context.getEntity() instanceof Player player)) return;
         if (isTakingSundamage(player)) return;
-        ModDataNBT data = tool.getPersistentData();
-        float value = data.getFloat(MIDNIGHT_ARISTOCRAT);
-        data.putFloat(MIDNIGHT_ARISTOCRAT, Math.max(value - amount,0));
         player.heal(amount/2);
     }
 
     @Override
     public void onInventoryTick(IToolStackView tool, ModifierEntry entry, Level world, LivingEntity holder, int itemSlot, boolean isSelected, boolean isCorrectSlot, ItemStack stack) {
-        int level = entry.getLevel();
         if (holder instanceof Player player && isCorrectSlot) {
-            if (isTakingSundamage(player)) return;
-            ModDataNBT data = tool.getPersistentData();
-            float value = data.getFloat(MIDNIGHT_ARISTOCRAT);
-            if (value >= level * 50) return;
-            data.putFloat(MIDNIGHT_ARISTOCRAT, Math.min(vampireLevelCorrection(player) + value, level * 50));
+            player.heal(entry.getLevel() * 0.25F);
         }
-
         super.onInventoryTick(tool, entry, world, holder, itemSlot, isSelected, isCorrectSlot, stack);
     }
 
-    @Override
-    public void addTooltip(IToolStackView tool, ModifierEntry modifier, @Nullable Player player, List<Component> tooltip, slimeknights.mantle.client.TooltipKey tooltipKey, TooltipFlag tooltipFlag) {
-        ModDataNBT persistantData = tool.getPersistentData();
-        float value = persistantData.getFloat(MIDNIGHT_ARISTOCRAT);
-        tooltip.add(Component.translatable("midnight_aristocrat.text").withStyle(ChatFormatting.GRAY).append(value+"%"));
-    }
 
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         hookBuilder.addHook(this, ModifierHooks.ON_ATTACKED);
-        hookBuilder.addHook(this, ModifierHooks.TOOLTIP);
         super.registerHooks(hookBuilder);
     }
 }

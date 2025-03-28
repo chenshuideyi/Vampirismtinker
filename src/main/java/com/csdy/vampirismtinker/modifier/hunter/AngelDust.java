@@ -35,7 +35,7 @@ public class AngelDust extends HunterBaseModifer implements MeleeHitModifierHook
         LivingEntity target = context.getLivingTarget();
         Player player = context.getPlayerAttacker();
         if (target != null && player != null && isVampireOrUndead(target)) {
-            forceAddEffect(player, (new MobEffectInstance(EffectsRegister.JUDGMENT.get(), 140,0)));
+            forceAddEffect(target, (new MobEffectInstance(EffectsRegister.JUDGMENT.get(), 140,0)));
             float value = ToolStats.ATTACK_DAMAGE.getDefaultValue() * hunterPower * 1.5F*entry.getLevel();
             reflectionPenetratingDamage(target,player,value/10);//数值需要考虑
         }
@@ -49,7 +49,7 @@ public class AngelDust extends HunterBaseModifer implements MeleeHitModifierHook
             if (!isVampireOrUndead(target)) return false;
             float value = (float) (Math.ceil(ToolStats.VELOCITY.getDefaultValue() * ToolStats.PROJECTILE_DAMAGE.getDefaultValue()) * hunterPower * 1.5*entry.getLevel());
             reflectionPenetratingDamage(target,player,value/50);//数值需要考虑
-            forceAddEffect(player, (new MobEffectInstance(EffectsRegister.JUDGMENT.get(), 140,0)));
+            forceAddEffect(target, (new MobEffectInstance(EffectsRegister.JUDGMENT.get(), 140,0)));
             arrow.setRemoved(Entity.RemovalReason.KILLED);
         }
         return false;

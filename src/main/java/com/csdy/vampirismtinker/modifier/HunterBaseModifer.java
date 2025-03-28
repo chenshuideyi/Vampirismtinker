@@ -92,11 +92,11 @@ public class HunterBaseModifer extends Modifier implements MeleeDamageModifierHo
         LivingEntity entity = context.getEntity();
         if (!(entity instanceof Player player)) return;
         if (context.getChangedSlot().isArmor()) {
+            if (!player.isAlive()) return;
             if (hunterPlayerLevel(player) < 1) {
                 boolean message = !player.getCommandSenderWorld().isClientSide;
                 if (!message) return;
                 if (vampirePlayerLevel(player) > 0) {
-                    if (!player.isAlive()) return;
                     player.displayClientMessage(Component.translatable("text.vampirismtinker.silver_flame_brand"), true);
                 } else
                     player.displayClientMessage(Component.translatable("text.vampirism.can_not_be_used_faction"), true);

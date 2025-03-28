@@ -41,8 +41,11 @@ public class InscribedPrayersArmor extends HunterBaseModifer implements ModifyDa
     @Override
     public float modifyDamageTaken(IToolStackView tool, ModifierEntry entry, EquipmentContext context, EquipmentSlot slot, DamageSource damageSource, float amount, boolean isDirectDamage) {
         Entity entity = damageSource.getEntity();
+        Entity directEntity = damageSource.getDirectEntity();
         if (!(context.getEntity() instanceof Player player)) return amount;
-        if (!(entity instanceof LivingEntity attacker)) return amount;
+        if (!(entity instanceof LivingEntity living) || !(directEntity instanceof LivingEntity attacker)) return amount;
+        if (isVampireOrUndead(living))
+            return amount * (1 - (hunterLevelCorrection(player) * entry.getLevel() * 1.2F) * 0.1F);
         if (isVampireOrUndead(attacker))
             return amount * (1 - (hunterLevelCorrection(player) * entry.getLevel() * 1.2F) * 0.1F);
         return amount;

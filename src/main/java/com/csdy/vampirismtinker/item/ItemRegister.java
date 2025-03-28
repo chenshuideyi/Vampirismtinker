@@ -17,7 +17,7 @@ import static com.csdy.vampirismtinker.ModMain.MODID;
 public class ItemRegister {
     public static DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
     public static final ItemDeferredRegisterExtension TINKER_ITEMS = new ItemDeferredRegisterExtension(MODID);
-//    public static final RegistryObject<Item> TEST_ITEM = ITEMS.register("test_item", TestItem::new);
+    public static final RegistryObject<Item> TEST_ITEM = ITEMS.register("test_item", TestItem::new);
     public static final RegistryObject<HolyHunterMetal> HOLY_HUNTER_METAL_REGISTRY_OBJECT = ITEMS.register("holy_hunter_metal", HolyHunterMetal::new);
     public static final RegistryObject<HunterMetal> HUNTER_METAL_REGISTRY_OBJECT = ITEMS.register("hunter_metal", HunterMetal::new);
 

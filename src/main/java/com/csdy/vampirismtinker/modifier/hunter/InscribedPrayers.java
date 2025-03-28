@@ -37,7 +37,7 @@ public class InscribedPrayers extends HunterBaseModifer implements MeleeHitModif
         if (target == null) return 0;
         if (isVampireOrUndead(target)){
             target.setSecondsOnFire(10);
-            return originalDamage * hunterLevelCorrection(player) * entry.getLevel() * 1.2f;
+            return originalDamage * hunterLevelCorrection(player) * (1 + entry.getLevel() * 0.2f);
         }
         return originalDamage;
     }
@@ -48,7 +48,7 @@ public class InscribedPrayers extends HunterBaseModifer implements MeleeHitModif
             if (!(attacker instanceof  Player player)) return false;
             if (!isVampireOrUndead(target)) return false;
             target.setSecondsOnFire(10);
-            arrow.setBaseDamage(arrow.getBaseDamage() * hunterLevelCorrection(player) * entry.getLevel() * 1.2f);
+            arrow.setBaseDamage(arrow.getBaseDamage() * hunterLevelCorrection(player) * (1 + entry.getLevel() * 0.2f));
             arrow.setRemoved(Entity.RemovalReason.KILLED);
         }
         return false;

@@ -48,7 +48,7 @@ public class BloodCharging extends VampireBaseModifer implements MeleeDamageModi
         if (player == null) return 0;
         ModDataNBT data = tool.getPersistentData();
         float value = data.getFloat(BLOOD_CHARGING);
-        return originalDamage * (1 + (0.01f * value * vampireLevelCorrection(player) + 0.1F*entry.getLevel()));
+        return originalDamage + originalDamage* (1 + (0.005f * value * vampireLevelCorrection(player) + 0.1F * entry.getLevel()));
     }
 
     @Override

@@ -26,6 +26,8 @@ import static com.csdy.vampirismtinker.modifier.method.ModifierUtil.*;
 import static com.csdy.vampirismtinker.modifier.method.ModifierUtil.forceAddEffect;
 
 public class HolyRomanRebornWarrior extends HunterBaseModifer implements ModifyDamageModifierHook,OnAttackedModifierHook {
+    private static final float TARGET_REDUCTION = 0.77f; // 77%
+    private static final int TRIGGER_COUNT = 4;
 
     @Override
     public boolean isNoLevels() {
@@ -51,7 +53,10 @@ public class HolyRomanRebornWarrior extends HunterBaseModifer implements ModifyD
     @Override
     public float modifyDamageTaken(IToolStackView tool, ModifierEntry entry, EquipmentContext context, EquipmentSlot slot, DamageSource damageSource, float amount, boolean isDirectDamage) {
         if (!(context.getEntity() instanceof Player player)) return amount;
-        return amount * (0.5F - (1-hunterLevelCorrection(player)));
+        float correction = hunterLevelCorrection(player);
+        float singleReduction = (float) Math.pow(TARGET_REDUCTION, 1.0/TRIGGER_COUNT);
+        float damageMultiplier = 1 - (1 - singleReduction) * (correction / 2.8f);
+        return amount * damageMultiplier;
     }
 
     @Override
@@ -59,10 +64,10 @@ public class HolyRomanRebornWarrior extends HunterBaseModifer implements ModifyD
         if (!(holder instanceof Player player)) return;
         if (isCorrectSlot && hunterPlayerLevel(player) > 0) {
             if (!(player.getHealth() < player.getMaxHealth())) return;
-            if (player.tickCount % 20 == 0 && player.getFoodData().getFoodLevel() > 18) {
-                player.heal(8 * hunterPlayerLevel(player) * hunterLevelCorrection(player)); // 直接计算 2 + 6
-            } else {
-                player.heal(2 * hunterPlayerLevel(player) * hunterLevelCorrection(player)); // 基础恢复
+            if (player.tickCount % 20 == 0) {
+                if (player.getFoodData().getFoodLevel() > 18)
+                     player.heal(3 * hunterPlayerLevel(player) * hunterLevelCorrection(player)); // 直接计算
+                else player.heal(1 * hunterPlayerLevel(player) * hunterLevelCorrection(player)); // 基础恢复
             }
         }
     }

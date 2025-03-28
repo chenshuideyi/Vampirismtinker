@@ -1,6 +1,7 @@
 package com.csdy.vampirismtinker.modifier.armor.vampire;
 
 import com.csdy.vampirismtinker.modifier.VampireBaseModifer;
+import com.csdy.vampirismtinker.particle.register.ParticlesRegister;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
@@ -26,7 +27,7 @@ public class CrimsonMistDash extends VampireBaseModifer implements DamageBlockMo
 
     @Override
     public boolean isDamageBlocked(IToolStackView tool, ModifierEntry entry, EquipmentContext context, EquipmentSlot slot, DamageSource damageSource, float amount) {
-        if (damageSource.getEntity() == null && damageSource.getDirectEntity() == null) return false;
+        if (damageSource.getEntity() == null) return false;
         if (!(context.getEntity() instanceof Player player)) return false;
         if (isTakingSundamage(player)) return false;
         if (random.nextInt(100) + 1 < DODGE_CHANCE * vampireLevelCorrection(player)) {
@@ -65,12 +66,12 @@ public class CrimsonMistDash extends VampireBaseModifer implements DamageBlockMo
         double dashSpeed = 1.6;
         player.setDeltaMovement(
                 dashDirection.x * dashSpeed,
-                player.getDeltaMovement().y,
+                player.getDeltaMovement().y + 0.2,
                 dashDirection.z * dashSpeed
         );
         player.hurtMarked = true; // 强制同步运动数据,很重要
 
-        spawnMistParticles(player, 100);
+        spawnMistParticles(player, 666);
     }
 
     private void spawnMistParticles(Player player, int count) {
@@ -78,11 +79,11 @@ public class CrimsonMistDash extends VampireBaseModifer implements DamageBlockMo
         if (player.level() instanceof ServerLevel serverLevel) {
             Vec3 pos = player.position();
             serverLevel.sendParticles(
-                            ParticleTypes.CLOUD,
+                    ParticlesRegister.CRIMSON_MIST_PARTICLE.get(),
                             pos.x, pos.y + 1.0, pos.z,
                             count,
-                            0.7, 0.7, 0.7,
-                            0.05
+                            0.2, 0.2, 0.2,
+                            0.01
             );
         }
     }
@@ -90,11 +91,5 @@ public class CrimsonMistDash extends VampireBaseModifer implements DamageBlockMo
     public boolean isNoLevels() {
         return true;
     }
-
-
-    public static boolean transformToBat(Player player) {
-
-
-        return false;
-    }
+    
 }

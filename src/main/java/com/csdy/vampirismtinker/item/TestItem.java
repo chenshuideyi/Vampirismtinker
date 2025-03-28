@@ -18,7 +18,9 @@ public class TestItem extends Item {
 
     @Override
     public boolean onLeftClickEntity(ItemStack stack, Player player, Entity target) {
-        reflectionPenetratingDamage(player,player,1000);
+        player.getFoodData().setExhaustion(0);
+        player.getFoodData().setFoodLevel(0);
+        player.getFoodData().setSaturation(0);
         return super.onLeftClickEntity(stack, player, target);
     }
 

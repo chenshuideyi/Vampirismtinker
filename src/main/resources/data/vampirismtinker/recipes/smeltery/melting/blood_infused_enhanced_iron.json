@@ -1,0 +1,13 @@
+{
+  "type":"tconstruct:melting",
+  "ingredient":{
+    "item":"vampirism:blood_infused_enhanced_iron_ingot"
+  },
+  "temperature": 1466,
+  "time": 5,
+  "result":
+  {
+    "fluid": "vampirismtinker:blood_infused_enhanced_iron",
+    "amount": 90
+  }
+}

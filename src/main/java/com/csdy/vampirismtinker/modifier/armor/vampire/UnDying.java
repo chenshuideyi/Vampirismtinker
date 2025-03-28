@@ -58,10 +58,11 @@ public class UnDying extends VampireBaseModifer {
                     for (int i = 0; i < vampireLevel; ++i) {
                         summonBatAroundPlayer(player);
                     }
-                    spawnSmokeParticles(player,1000);
+                    spawnSmokeParticles(player,6666);
                     player.setHealth(player.getMaxHealth()/2);
                     player.deathTime = -2;
                     player.isAlive();
+                    player.invulnerableTime = 60;
                     event.setCanceled(true);
                 }
             }
@@ -117,11 +118,9 @@ public class UnDying extends VampireBaseModifer {
             ServerLevel level = (ServerLevel) player.level();
 
             // 播放音效
-            level
-                    .playSound(
+            level.playSound(
                             null,
-                            player
-                                    .getX(), player.getY(), player.getZ(),
+                            player.getX(), player.getY(), player.getZ(),
                             SoundEvents.TOTEM_USE,
                             SoundSource.PLAYERS,
                             1.0F,
@@ -129,15 +128,18 @@ public class UnDying extends VampireBaseModifer {
                     );
 
             // 生成粒子效果
-            level
-                    .sendParticles(
+            level.sendParticles(
                             ParticleTypes.TOTEM_OF_UNDYING,
-                            player
-                                    .getX(), player.getY() + 1.0, player.getZ(),
+                            player.getX(), player.getY() + 1.0, player.getZ(),
                             100, // 粒子数量
                             0.5, 0.5, 0.5,
                             0.2
                     );
         }
+    }
+
+    @Override
+    public boolean isNoLevels() {
+        return true;
     }
 }
