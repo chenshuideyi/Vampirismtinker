@@ -60,7 +60,7 @@ public class HolyRomanRebornWarrior extends HunterBaseModifer implements ModifyD
     }
 
     @Override
-    public void onInventoryTick(IToolStackView tool, ModifierEntry modifier, Level world, LivingEntity holder, int itemSlot, boolean isSelected, boolean isCorrectSlot, ItemStack stack) {
+    public void onInventoryTick(IToolStackView tool, ModifierEntry entry, Level world, LivingEntity holder, int itemSlot, boolean isSelected, boolean isCorrectSlot, ItemStack stack) {
         if (!(holder instanceof Player player)) return;
         if (isCorrectSlot && hunterPlayerLevel(player) > 0) {
             if (!(player.getHealth() < player.getMaxHealth())) return;
@@ -70,5 +70,6 @@ public class HolyRomanRebornWarrior extends HunterBaseModifer implements ModifyD
                 else player.heal(1 * hunterPlayerLevel(player) * hunterLevelCorrection(player)); // 基础恢复
             }
         }
+        super.onInventoryTick(tool,entry,world,holder,itemSlot,isSelected,isCorrectSlot,stack);
     }
 }

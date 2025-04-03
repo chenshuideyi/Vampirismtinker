@@ -36,6 +36,7 @@ import static net.minecraft.world.InteractionResult.SUCCESS;
 
 public class HunterBaseModifer extends Modifier implements MeleeDamageModifierHook,InventoryTickModifierHook, EquipmentChangeModifierHook {
     public static final float hunterPower = 0.2f;
+
     @Override
     public float getMeleeDamage(IToolStackView iToolStackView, ModifierEntry modifierEntry, ToolAttackContext context, float baseDamage, float damage) {
         Player player = context.getPlayerAttacker();
@@ -103,6 +104,7 @@ public class HunterBaseModifer extends Modifier implements MeleeDamageModifierHo
             }
         }
     }
+
     @Override
     public void onInventoryTick(IToolStackView tool, ModifierEntry modifier, Level world, LivingEntity holder, int itemSlot, boolean isSelected, boolean isCorrectSlot, ItemStack stack) {
         if (!(holder instanceof Player player)) return;

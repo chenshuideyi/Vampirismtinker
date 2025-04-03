@@ -30,6 +30,5 @@ public class ScarletFrenzy extends VampireBaseModifer implements MeleeHitModifie
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         hookBuilder.addHook(this,ModifierHooks.MELEE_HIT);
-        super.registerHooks(hookBuilder);
     }
 }

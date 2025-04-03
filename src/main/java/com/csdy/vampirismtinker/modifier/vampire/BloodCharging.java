@@ -79,9 +79,10 @@ public class BloodCharging extends VampireBaseModifer implements MeleeDamageModi
 
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
+        hookBuilder.addHook(this, ModifierHooks.MELEE_DAMAGE);
         hookBuilder.addHook(this, ModifierHooks.MELEE_HIT);
         hookBuilder.addHook(this, ModifierHooks.TOOLTIP);
-        super.registerHooks(hookBuilder);
+
     }
 
 }

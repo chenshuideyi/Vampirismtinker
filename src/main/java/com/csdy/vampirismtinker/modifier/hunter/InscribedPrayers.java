@@ -57,6 +57,7 @@ public class InscribedPrayers extends HunterBaseModifer implements MeleeHitModif
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         hookBuilder.addHook(this, ModifierHooks.MELEE_DAMAGE);
+        hookBuilder.addHook(this, ModifierHooks.MELEE_HIT);
         hookBuilder.addHook(this, ModifierHooks.PROJECTILE_HIT);
     }
 

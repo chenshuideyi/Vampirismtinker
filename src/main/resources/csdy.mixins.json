@@ -5,7 +5,8 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "csdy.refmap.json",
   "mixins": [
-    "LivingHealthMixin"
+    "LivingHealthMixin",
+    "SynchedEntityDataMixin"
   ],
   "client": [
   ],

@@ -57,6 +57,7 @@ public class AngelDust extends HunterBaseModifer implements MeleeHitModifierHook
 
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
+        hookBuilder.addHook(this, ModifierHooks.MELEE_DAMAGE);
         hookBuilder.addHook(this, ModifierHooks.MELEE_HIT);
         hookBuilder.addHook(this, ModifierHooks.PROJECTILE_HIT);
     }

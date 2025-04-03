@@ -4,7 +4,6 @@ package com.csdy.vampirismtinker;
 import com.csdy.vampirismtinker.effect.EffectsRegister;
 import com.csdy.vampirismtinker.fluid.register.FludRegister;
 import com.csdy.vampirismtinker.item.ItemRegister;
-import com.csdy.vampirismtinker.modifier.method.TestEvent;
 import com.csdy.vampirismtinker.modifier.register.ModifierRegister;
 
 import com.csdy.vampirismtinker.particle.register.ParticlesRegister;

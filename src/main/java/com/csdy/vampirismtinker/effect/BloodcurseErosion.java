@@ -10,11 +10,8 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeMap;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraftforge.event.entity.living.LivingHealEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.NotNull;
-@Mod.EventBusSubscriber(modid = ModMain.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+
 public class BloodcurseErosion extends MobEffect {
     private static final String SPEED_MODIFIER_UUID = "7107DE5E-7CE8-4030-940E-514C1F160891"; // 唯一标识符
     private static final double SPEED_REDUCTION = -0.5;
@@ -27,15 +24,6 @@ public class BloodcurseErosion extends MobEffect {
         super(MobEffectCategory.HARMFUL, 0);
         this.addAttributeModifier(Attributes.MOVEMENT_SPEED, SPEED_MODIFIER_UUID, SPEED_REDUCTION, AttributeModifier.Operation.MULTIPLY_TOTAL);
         this.addAttributeModifier(Attributes.ATTACK_DAMAGE, ATTACK_DAMAGE_MODIFIER_UUID, ATTACK_DAMAGE_REDUCTION, AttributeModifier.Operation.MULTIPLY_TOTAL);
-    }
-
-    @SubscribeEvent
-    public static void onLivingHeal(LivingHealEvent event) {
-        LivingEntity entity = event.getEntity();
-        float amount = event.getAmount();
-        if (entity.hasEffect(EffectsRegister.BLOOD_CURSE_EROSION.get())) {
-            entity.hurt(new DamageSource(Holder.direct(new DamageType("blood_curse", 0f))), -Math.abs(amount) * 2);
-        }
     }
 
     @Override

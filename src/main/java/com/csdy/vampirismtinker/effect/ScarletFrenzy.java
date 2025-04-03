@@ -10,6 +10,7 @@ import net.minecraft.world.entity.LivingEntity;
 
 public class ScarletFrenzy extends MobEffect {
 
+
     public ScarletFrenzy(){
         super(MobEffectCategory.HARMFUL,0x8B0000);
     }

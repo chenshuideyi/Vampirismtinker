@@ -10,6 +10,8 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -34,6 +36,7 @@ import static com.csdy.vampirismtinker.modifier.method.ModifierUtil.forceAddEffe
 
 public class VampireBaseModifer extends Modifier implements MeleeDamageModifierHook, InventoryTickModifierHook, EquipmentChangeModifierHook {
     public static final float vampirePower = 0.2f;
+
     protected static boolean isTakingSundamage(Player player) {
         IVampirePlayer vampire = VampirismAPI.getVampirePlayer(player).orElse(null);
         return vampire != null && vampire.isGettingSundamage(player.level());
@@ -86,12 +89,15 @@ public class VampireBaseModifer extends Modifier implements MeleeDamageModifierH
             }
         }
     }
+
     @Override
     public void onInventoryTick(IToolStackView tool, ModifierEntry modifier, Level world, LivingEntity holder, int itemSlot, boolean isSelected, boolean isCorrectSlot, ItemStack stack) {
         if (!(holder instanceof Player player)) return;
-        if (isCorrectSlot && vampirePlayerLevel(player) < 1 && player.isAlive()) {
+        if (isCorrectSlot && vampirePlayerLevel(player) < 1) {
+            if (!player.isAlive()) return;
             forceAddEffect(holder, (new MobEffectInstance(EffectsRegister.BLOOD_CURSE_EROSION.get(), 120, 0)));
         }
+
     }
 
     @Override
