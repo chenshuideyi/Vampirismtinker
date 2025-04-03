@@ -6,11 +6,24 @@
     "part_2": "vampirismtinker:item/tool/tic_heart_seeker/part_2",
     "part_3": "vampirismtinker:item/tool/tic_heart_seeker/part_3",
     "part_4": "vampirismtinker:item/tool/tic_heart_seeker/part_4",
-    "broken_part": "vampirismtinker:item/tool/tic_heart_seeker/broken_part"
+    "broken_part": "vampirismtinker:item/tool/tic_heart_seeker/broken_part",
+
+    "large_part_1": "vampirismtinker:item/tool/tic_heart_seeker/large/part_1",
+    "large_part_2": "vampirismtinker:item/tool/tic_heart_seeker/large/part_2",
+    "large_part_3": "vampirismtinker:item/tool/tic_heart_seeker/large/part_3",
+    "large_part_4": "vampirismtinker:item/tool/tic_heart_seeker/large/part_4",
+    "large_broken_part": "vampirismtinker:item/tool/tic_heart_seeker/large/broken_part"
   },
-  "modifier_roots": [
+  "modifier_roots":
+  {
+    "small": [
       "vampirismtinker:item/tool/tic_heart_seeker/modifiers/"
-  ],
+    ],
+    "large": [
+      "vampirismtinker:item/tool/tic_heart_seeker/large/modifiers/"
+    ]
+  },
+  "large": true,
   "parts": [
     {"name": "part_1", "index": 0, "broken": "broken_part"},
     {"name": "part_2", "index": 1},

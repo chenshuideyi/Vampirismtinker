@@ -13,6 +13,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.CreativeModeTabRegistry;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -21,12 +22,16 @@ import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import slimeknights.tconstruct.library.client.data.material.AbstractMaterialSpriteProvider;
 import slimeknights.tconstruct.library.client.data.material.MaterialPartTextureGenerator;
+import slimeknights.tconstruct.library.client.model.TinkerItemProperties;
 import slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider;
 
 import java.util.Set;
+
+import static com.csdy.vampirismtinker.item.ItemRegister.*;
 
 //TODO: 暂时不知道还有啥
 @Mod(ModMain.MODID)
@@ -54,11 +59,23 @@ public class ModMain {
 
     private void addItemsToCreativeTab(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey().equals(CreativeModeTabs.INGREDIENTS)) {
-            event.accept(ItemRegister.HUNTER_METAL_REGISTRY_OBJECT.get());
+            event.accept(HUNTER_METAL_REGISTRY_OBJECT.get());
             event.accept(ItemRegister.HOLY_HUNTER_METAL_REGISTRY_OBJECT.get());
         }
     }
 
+    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    public static class ClientModEvents {
+        @SubscribeEvent
+        public static void onClientSetup(FMLClientSetupEvent event) {
+            event.enqueueWork(() -> {
+                TinkerItemProperties.registerBrokenProperty(HEART_SEEKER.get());
+                TinkerItemProperties.registerToolProperties(HEART_SEEKER.get());
+                TinkerItemProperties.registerBrokenProperty(CRUCIFIX.get());
+                TinkerItemProperties.registerToolProperties(CRUCIFIX.get());
+            });
+        }
+    }
 
 }
 
