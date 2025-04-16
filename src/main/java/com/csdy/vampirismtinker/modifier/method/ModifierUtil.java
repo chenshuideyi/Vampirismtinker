@@ -29,31 +29,9 @@ public class ModifierUtil {
 
     //DATA_HEALTH_ID
     public static final EntityDataAccessor<Float> DATA_HEALTH_ID = getHealthDataAccessor();
-    public static final Field HEALTH = getHealthData();
-
-    private static Field getHealthData() {
-        ///因为mc的狗屎混淆所以DATA_HEALTH_ID得写成f_20961_,不然非开发环境会报错,密码个逼
-        ///普猫无视这个,因此AOP贯穿是必要的
-        try {
-//            Field field = LivingEntity.class.getDeclaredField("DATA_HEALTH_ID");
-            Field field = LivingEntity.class.getDeclaredField("f_20961_");
-            field.setAccessible(true);
-            Object value = field.get(null);
-
-            if (value instanceof Field healthData) {
-                return healthData;
-            } else {
-                System.err.println("DATA_HEALTH_ID is not of type EntityDataAccessor");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
 
     private static EntityDataAccessor<Float> getHealthDataAccessor() {
         ///因为mc的狗屎混淆所以DATA_HEALTH_ID得写成f_20961_,不然非开发环境会报错,密码个逼
-        ///普猫无视这个,因此AOP贯穿是必要的
         try {
 //            Field field = LivingEntity.class.getDeclaredField("DATA_HEALTH_ID");
             Field field = LivingEntity.class.getDeclaredField("f_20961_");
@@ -69,36 +47,6 @@ public class ModifierUtil {
             e.printStackTrace();
         }
         return null;
-    }
-
-    ///反射设置生命值<br/>
-    ///target 目标<br/>
-    ///player 玩家<br/>
-    ///float 设置的值<br/>
-    /// 打穿王八壳,放手一搏吧<br/>
-    /// 不是永远都有用,,,,,
-    public static void reflectionSetHealth(Entity target, Player player, float value) throws IllegalAccessException {
-        if (!(target instanceof LivingEntity living)) return;
-        if (living.level().isClientSide) return; // 仅在服务端操作
-
-        // 1. 直接修改health字段
-        float clampedValue = Math.max(value, 0.0F);
-        if (DATA_HEALTH_ID != null) living.getEntityData().set(DATA_HEALTH_ID, clampedValue);
-        if (HEALTH != null) HEALTH.setFloat(target,clampedValue);
-
-        // 2. 同步客户端显示（关键！）
-        if (living instanceof ServerPlayer serverPlayer) {
-            serverPlayer.connection.send(new ClientboundSetHealthPacket(
-                    clampedValue,
-                    serverPlayer.getFoodData().getFoodLevel(),
-                    serverPlayer.getFoodData().getSaturationLevel()
-            ));
-        }
-
-        // 3. 处理死亡逻辑
-        if (clampedValue <= 0.0F) {
-            living.die(living.level().damageSources().playerAttack(player));
-        }
     }
 
     ///反射贯穿伤害<br/>
@@ -137,39 +85,10 @@ public class ModifierUtil {
             Map<MobEffect, MobEffectInstance> effects = (Map<MobEffect, MobEffectInstance>) effectsField.get(entity);
             effects.put(instance.getEffect(), instance);
 
-            if (!entity.level().isClientSide) {
-                entity.getAttributes().assignValues(entity.getAttributes()); // 刷新属性
-                if (entity instanceof ServerPlayer player) player.connection.send(new ClientboundUpdateMobEffectPacket(entity.getId(), instance));
-            }
         } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
 
-    ///反射设置生命值<br/>
-    ///target 目标<br/>
-    ///player 玩家<br/>
-    ///float 设置的值<br/>
-    /// 打穿王八壳,放手一搏吧<br/>
-    /// 不是永远都有用,,,,,
-//    public static void setHealthDirectly(LivingEntity entity, float newHealth) {
-//        try {
-//            // 1. 获取 DATA_HEALTH_ID
-//            Field dataHealthIdField = LivingEntity.class.getDeclaredField("DATA_HEALTH_ID"); //f_20961_
-//            dataHealthIdField.setAccessible(true);
-//            EntityDataAccessor<Float> DATA_HEALTH_ID = (EntityDataAccessor<Float>) dataHealthIdField.get(null);
-//
-//            // 2. 获取 SynchedEntityData 的底层数据存储
-//            SynchedEntityData entityData = entity.getEntityData();
-//            Field dirtyFieldsField = SynchedEntityData.class.getDeclaredField("itemsById"); // "f_135345_"
-//            dirtyFieldsField.setAccessible(true);
-//            Set<Integer> dirtyItems = (Set<Integer>) dirtyFieldsField.get(entityData);
-//
-//            // 3. 强制更新值
-//            entityData.set(DATA_HEALTH_ID, newHealth); // 仍然调用 set，但绕过 clamp 限制
-//        } catch (Exception ex) {
-//            ex.printStackTrace();
-//        }
-//    }
 
 }

@@ -35,6 +35,7 @@ import static com.csdy.vampirismtinker.modifier.method.ModifierUtil.forceAddEffe
 
 @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class UnDying extends VampireBaseModifer {
+
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void LivingDeathVampire(LivingDeathEvent event) {
         //吸血鬼护甲免死相关
@@ -68,6 +69,8 @@ public class UnDying extends VampireBaseModifer {
             }
         }
     }
+
+
 
     private static void summonBatAroundPlayer(Player player) {
         if (!player.level().isClientSide) {

@@ -63,8 +63,8 @@ buildscript {
     }
     apply plugin: 'java'
     mixin {
-        add sourceSets.main, 'csdy.refmap.json'
-        config 'csdy.mixins.json'
+        add sourceSets.main, 'vampirismtinker.refmap.json'
+        config 'vampirismtinker.mixins.json'
         debug.verbose = true
         debug.export = true
     }
