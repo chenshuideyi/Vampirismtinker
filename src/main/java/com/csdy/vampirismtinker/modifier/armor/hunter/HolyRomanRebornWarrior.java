@@ -18,6 +18,7 @@ import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.armor.ModifyDamageModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.armor.OnAttackedModifierHook;
+import slimeknights.tconstruct.library.modifiers.hook.interaction.InventoryTickModifierHook;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.context.EquipmentContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
@@ -25,7 +26,7 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import static com.csdy.vampirismtinker.modifier.method.ModifierUtil.*;
 import static com.csdy.vampirismtinker.modifier.method.ModifierUtil.forceAddEffect;
 
-public class HolyRomanRebornWarrior extends HunterBaseModifer implements ModifyDamageModifierHook,OnAttackedModifierHook {
+public class HolyRomanRebornWarrior extends HunterBaseModifer implements ModifyDamageModifierHook,OnAttackedModifierHook, InventoryTickModifierHook {
     private static final float TARGET_REDUCTION = 0.77f; // 77%
     private static final int TRIGGER_COUNT = 4;
 
@@ -47,6 +48,7 @@ public class HolyRomanRebornWarrior extends HunterBaseModifer implements ModifyD
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         hookBuilder.addHook(this, ModifierHooks.ON_ATTACKED);
         hookBuilder.addHook(this, ModifierHooks.MODIFY_DAMAGE);
+        hookBuilder.addHook(this, ModifierHooks.INVENTORY_TICK);
         super.registerHooks(hookBuilder);
     }
 

@@ -44,6 +44,7 @@ public class UnDying extends VampireBaseModifer {
             MobEffectInstance effect = player.getActiveEffectsMap().get(ModEffects.ARMOR_REGENERATION.get());
             if (effect != null && effect.getDuration() > 0) return;
             for (EquipmentSlot slot : EquipmentSlot.values()) {
+                if (slot.getType() != EquipmentSlot.Type.ARMOR) continue;
                 ItemStack stack = player.getItemBySlot(slot);
                 if (ModifierUtil.getModifierLevel(stack, ModifierRegister.UN_DYING_STATIC_MODIFIER.getId()) > 0) {
                     playTotemEffects(player);
