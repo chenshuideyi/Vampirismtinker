@@ -1,0 +1,72 @@
+{
+    "parts": [
+        {
+            "path": "vampirismtinker:item/tool/tic_heart_seeker/part_1",
+            "stat_type": "tconstruct:binding"
+        },
+        {
+            "path": "vampirismtinker:item/tool/tic_heart_seeker/part_2",
+            "stat_type": "tconstruct:binding"
+        },
+        {
+            "path": "vampirismtinker:item/tool/tic_heart_seeker/part_3",
+            "stat_type": "tconstruct:binding"
+        },
+        {
+            "path": "vampirismtinker:item/tool/tic_heart_seeker/part_4",
+            "stat_type": "tconstruct:binding"
+        },
+        {
+            "path": "vampirismtinker:item/tool/tic_heart_seeker/broken_part",
+            "stat_type": "tconstruct:binding"
+        },
+
+        {
+            "path": "vampirismtinker:item/tool/tic_heart_seeker/large/part_1",
+            "stat_type": "tconstruct:binding"
+        },
+        {
+            "path": "vampirismtinker:item/tool/tic_heart_seeker/large/part_2",
+            "stat_type": "tconstruct:binding"
+        },
+        {
+            "path": "vampirismtinker:item/tool/tic_heart_seeker/large/part_3",
+            "stat_type": "tconstruct:binding"
+        },
+        {
+            "path": "vampirismtinker:item/tool/tic_heart_seeker/large/part_4",
+            "stat_type": "tconstruct:binding"
+        },
+        {
+            "path": "vampirismtinker:item/tool/tic_heart_seeker/large/broken_part",
+            "stat_type": "tconstruct:binding"
+        },
+
+
+        {
+            "path": "vampirismtinker:item/tool/tic_crucifix/part_1",
+            "stat_type": "tconstruct:binding"
+        },
+        {
+            "path": "vampirismtinker:item/tool/tic_crucifix/part_2",
+            "stat_type": "tconstruct:binding"
+        },
+        {
+            "path": "vampirismtinker:item/tool/tic_crucifix/part_3",
+            "stat_type": "tconstruct:binding"
+        },
+        {
+            "path": "vampirismtinker:item/tool/tic_crucifix/part_4",
+            "stat_type": "tconstruct:binding"
+        },
+        {
+            "path": "vampirismtinker:item/tool/tic_crucifix/part_5",
+            "stat_type": "tconstruct:binding"
+        },
+        {
+            "path": "vampirismtinker:item/tool/tic_crucifix/broken_part",
+            "stat_type": "tconstruct:binding"
+        }
+    ],
+    "replace": false
+}
