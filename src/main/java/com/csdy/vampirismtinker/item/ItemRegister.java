@@ -18,6 +18,8 @@ public class ItemRegister {
     public static DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
     public static final ItemDeferredRegisterExtension TINKER_ITEMS = new ItemDeferredRegisterExtension(MODID);
 
+    public static final RegistryObject<Test> TEST_REGISTRY_OBJECT = ITEMS.register("test", Test::new);
+
     public static final RegistryObject<HolyHunterMetal> HOLY_HUNTER_METAL_REGISTRY_OBJECT = ITEMS.register("holy_hunter_metal", HolyHunterMetal::new);
     public static final RegistryObject<HunterMetal> HUNTER_METAL_REGISTRY_OBJECT = ITEMS.register("hunter_metal", HunterMetal::new);
 

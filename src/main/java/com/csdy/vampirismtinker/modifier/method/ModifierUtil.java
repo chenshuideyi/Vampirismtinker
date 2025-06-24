@@ -61,7 +61,7 @@ public class ModifierUtil {
         float currentHealth = living.getEntityData().get(DATA_HEALTH_ID);
         float newHealth = currentHealth-value;
         living.getEntityData().set(DATA_HEALTH_ID, newHealth);
-        if (living.getHealth() <= 0.0F) {
+        if (living.getHealth() <= 0.0F && !(living instanceof Player)) {
             living.die(living.level().damageSources().playerAttack(player));
         }
     }

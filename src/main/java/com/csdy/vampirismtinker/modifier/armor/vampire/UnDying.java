@@ -1,5 +1,6 @@
 package com.csdy.vampirismtinker.modifier.armor.vampire;
 
+import com.csdy.vampirismtinker.effect.EffectsRegister;
 import com.csdy.vampirismtinker.modifier.VampireBaseModifer;
 import com.csdy.vampirismtinker.modifier.register.ModifierRegister;
 import de.teamlapen.vampirism.core.ModEffects;
@@ -48,6 +49,7 @@ public class UnDying extends VampireBaseModifer {
                 ItemStack stack = player.getItemBySlot(slot);
                 if (ModifierUtil.getModifierLevel(stack, ModifierRegister.UN_DYING_STATIC_MODIFIER.getId()) > 0) {
                     playTotemEffects(player);
+                    playSound(player.level,player);
                     int vampireLevel = VampirePlayer.get(player).getLevel();
                     int durationTicks;
                     if (vampireLevel >= 14) {
@@ -120,17 +122,6 @@ public class UnDying extends VampireBaseModifer {
     private static void playTotemEffects(Player player) {
         if (!player.level().isClientSide) {
             ServerLevel level = (ServerLevel) player.level();
-
-            // 播放音效
-            level.playSound(
-                            null,
-                            player.getX(), player.getY(), player.getZ(),
-                            SoundEvents.TOTEM_USE,
-                            SoundSource.PLAYERS,
-                            1.0F,
-                            1.0F
-                    );
-
             // 生成粒子效果
             level.sendParticles(
                             ParticleTypes.TOTEM_OF_UNDYING,
@@ -140,6 +131,17 @@ public class UnDying extends VampireBaseModifer {
                             0.2
                     );
         }
+    }
+
+    protected static void playSound(Level level, LivingEntity holder){
+        level.playSound(
+                null,
+                holder.getX(), holder.getY(), holder.getZ(),
+                SoundEvents.TOTEM_USE,
+                SoundSource.PLAYERS,
+                0.5F,
+                1F
+        );
     }
 
     @Override

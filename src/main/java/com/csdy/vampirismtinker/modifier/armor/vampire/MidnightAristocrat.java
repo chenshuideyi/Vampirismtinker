@@ -39,6 +39,7 @@ public class MidnightAristocrat extends VampireBaseModifer implements OnAttacked
     @Override
     public void onInventoryTick(IToolStackView tool, ModifierEntry entry, Level world, LivingEntity holder, int itemSlot, boolean isSelected, boolean isCorrectSlot, ItemStack stack) {
         if (holder instanceof Player player && isCorrectSlot) {
+            if (isTakingSundamage(player)) return;
             player.heal(entry.getLevel() * 0.25F);
         }
         super.onInventoryTick(tool, entry, world, holder, itemSlot, isSelected, isCorrectSlot, stack);

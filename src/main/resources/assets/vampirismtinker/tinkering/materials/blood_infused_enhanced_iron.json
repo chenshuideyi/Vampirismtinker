@@ -24,31 +24,31 @@
         "type": "tconstruct:grey_to_color",
         "palette": [
           {
-            "color": "BFEDFD",
+            "color": "FFC0CB",
             "grey": 0
           },
           {
-            "color": "BFEDFD",
+            "color": "FFC0CB",
             "grey": 63
           },
           {
-            "color": "BFEDFD",
+            "color": "FF69B4",
             "grey": 102
           },
           {
-            "color": "56E5EB",
+            "color": "FF1493",
             "grey": 140
           },
           {
-            "color": "56E5EB",
+            "color": "FF1493",
             "grey": 178
           },
           {
-            "color": "09C1FF",
+            "color": "FF0000",
             "grey": 216
           },
           {
-            "color": "09C1FF",
+            "color": "FF0000",
             "grey": 255
           }
         ]

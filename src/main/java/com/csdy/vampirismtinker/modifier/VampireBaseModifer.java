@@ -39,6 +39,7 @@ public class VampireBaseModifer extends Modifier implements MeleeDamageModifierH
 
     protected static boolean isTakingSundamage(Player player) {
         IVampirePlayer vampire = VampirismAPI.getVampirePlayer(player).orElse(null);
+        if (player.hasEffect(EffectsRegister.JUDGMENT.get())) return true;
         return vampire != null && vampire.isGettingSundamage(player.level());
     }
 

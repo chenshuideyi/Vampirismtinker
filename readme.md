@@ -1,4 +1,4 @@
-# TconDiadema
+# Vampirismtinker
 
 **English** | [简体中文](readme_zh.md)
 

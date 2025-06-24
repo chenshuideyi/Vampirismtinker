@@ -17,7 +17,7 @@ public class SilverflameBrand extends MobEffect {
     private static final String SPEED_MODIFIER_UUID = "7107DE5E-7CE8-4030-940E-514C1F160891"; // 唯一标识符
     private static final double SPEED_REDUCTION = -0.5;
 
-    private static final String ATTACK_DAMAGE_MODIFIER_UUID = "7107DE5E-7CE8-4030-940E-514C1F160891";
+    private static final String ATTACK_DAMAGE_MODIFIER_UUID = "7107DE5E-7CE8-4030-940E-514C1F160892";
     private static final double ATTACK_DAMAGE_REDUCTION = -0.5;
 
 
@@ -40,6 +40,6 @@ public class SilverflameBrand extends MobEffect {
     @Override
     public void removeAttributeModifiers(@NotNull LivingEntity entity, @NotNull AttributeMap attributeMap, int amplifier) {
         super.removeAttributeModifiers(entity, attributeMap, amplifier);
-        entity.hurt(new DamageSource(Holder.direct(new DamageType("hallelu_yah", 0f))), 77F);
+        entity.hurt(entity.damageSources().magic(), 77.0F);
     }
 }
