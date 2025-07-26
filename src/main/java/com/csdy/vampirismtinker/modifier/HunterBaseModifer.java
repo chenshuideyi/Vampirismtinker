@@ -1,6 +1,7 @@
 package com.csdy.vampirismtinker.modifier;
 
 import com.csdy.vampirismtinker.effect.EffectsRegister;
+import de.teamlapen.vampirism.api.entity.vampire.IVampire;
 import de.teamlapen.vampirism.entity.player.hunter.HunterPlayer;
 import de.teamlapen.vampirism.entity.player.vampire.VampirePlayer;
 import de.teamlapen.vampirism.entity.vampire.VampireBaseEntity;
@@ -72,14 +73,14 @@ public class HunterBaseModifer extends Modifier implements MeleeDamageModifierHo
 
 
 
-    protected static boolean isVampireOrUndead(LivingEntity entity) {
-        if (entity instanceof VampireBaseEntity) {
+    public static boolean isVampireOrUndead(LivingEntity entity) {
+        if (entity instanceof IVampire) {
             return true;
         }
-        if (entity instanceof Player player){
-            VampirePlayer vampire = VampirePlayer.get(player);
-            if (vampire.getLevel() > 0) return true;
-        }
+//        if (entity instanceof Player player){
+//            VampirePlayer vampire = VampirePlayer.get(player);
+//            if (vampire.getLevel() > 0) return true;
+//        }
         return entity.getMobType() == MobType.UNDEAD;
     }
 

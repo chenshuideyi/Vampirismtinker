@@ -8,7 +8,7 @@
   "modifier.vampirismtinker.crucio.description": "就像匠魂2迅捷剑一样",
 
   "item.vampirismtinker.tic_crucifix": "巨型十字架",
-  "item.vampirismtinker.tic_crucifix.description": "一种只有猎人才会使用的巨型极端暴力武器,会对大范围内所有的生物造成可怖创伤且拥有对不死怪物十倍特攻\n在高级猎人的手中会变得更强!",
+  "item.vampirismtinker.tic_crucifix.description": "一种只有猎人才会使用的巨型极端暴力武器,暴击时会对大范围内所有的生物造成可怖创伤且拥有对不死怪物十倍特攻\n在高级猎人的手中会变得更强!",
 
   "modifier.vampirismtinker.catholic_vampire_hunt": "天主教猎杀吸血鬼",
   "modifier.vampirismtinker.catholic_vampire_hunt.flavor": "耶稣说：“撒但退去吧！因为经上记着说：‘当拜主你的　神，单要侍奉他。’” - (马太福音4:10)",
@@ -97,6 +97,9 @@
 
   "modifier.vampirismtinker.un_dying": "不死",
   "modifier.vampirismtinker.un_dying.flavor": "午夜的君王",
-  "modifier.vampirismtinker.un_dying.description": "当吸血鬼死亡在无光的地方,他们会失去自己的身体护甲一阵子并复活"
+  "modifier.vampirismtinker.un_dying.description": "当吸血鬼死亡在无光的地方,他们会失去自己的身体护甲一阵子并复活",
 
+  "modifier.vampirismtinker.vampirism": "No.FF0000 红雾",
+  "modifier.vampirismtinker.vampirism.flavor": "遮天蔽日",
+  "modifier.vampirismtinker.vampirism.description": "提供你无穷无尽的血液值，散布诅咒土壤，在阳光下不会受到伤害且装备效果不会失效"
 }

@@ -1,6 +1,8 @@
 package com.csdy.vampirismtinker;
 
 
+import com.csdy.vampirismtinker.diadema.ClientDiademaRegister;
+import com.csdy.vampirismtinker.diadema.DiademaRegister;
 import com.csdy.vampirismtinker.effect.EffectsRegister;
 import com.csdy.vampirismtinker.fluid.register.FludRegister;
 import com.csdy.vampirismtinker.item.ItemRegister;
@@ -49,6 +51,8 @@ public class ModMain {
         FludRegister.FLUIDS.register(bus);
         EffectsRegister.EFFECT.register(bus);
         ParticlesRegister.PARTICLE_TYPES.register(bus);
+        ClientDiademaRegister.CLIENT_DIADEMA_TYPES.register(bus);
+        DiademaRegister.DIADEMA_TYPES.register(bus);
 
         MinecraftForge.EVENT_BUS.register(this);
         bus.addListener(this::addItemsToCreativeTab);

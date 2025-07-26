@@ -17,6 +17,7 @@ public class ScarletFrenzy extends MobEffect {
     @Override
     public void applyEffectTick(LivingEntity entity, int amplifier) {
         entity.invulnerableTime =  0;
+        entity.setHealth(entity.getHealth() - 0.5F);
     }
 
     @Override

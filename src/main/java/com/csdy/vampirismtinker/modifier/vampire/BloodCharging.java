@@ -61,11 +61,11 @@ public class BloodCharging extends VampireBaseModifer implements MeleeDamageModi
         if (target != null && player != null) {
             VampirePlayer vampire = VampirePlayer.get(player);
             if (value >= 100 +(level -1) * 50){
-                vampire.addExhaustion(level);
+                vampire.drinkBlood(1,1,null);
                 player.heal(level);
                 return;
             }
-            data.putFloat(BLOOD_CHARGING, Math.min(vampireLevelCorrection(player) + value, 100 + (level -1 ) * 50));
+            data.putFloat(BLOOD_CHARGING, Math.min(vampireLevelCorrection(player) + value + 100, 100 + (level -1 ) * 50));
         }
     }
 

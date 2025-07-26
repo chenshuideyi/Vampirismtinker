@@ -7,13 +7,13 @@
       "amount": 6000
     },
     {
-      "name": "tconstruct:molten_iron",
+      "name": "tconstruct:molten_manyullyn",
       "amount": 90
     }
   ],
   "result": {
     "fluid": "vampirismtinker:holy_hunter_metal",
-    "amount": 90
+    "amount": 270
   },
   "temperature": 1477
 }

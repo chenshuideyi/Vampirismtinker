@@ -1,5 +1,103 @@
 {
-  "item.csdy.web_13234.name": "11111",
+  "vampirismtinker_tool_tab": "Vampirismtinker Tool",
+  "item.vampirismtinker.tic_heart_seeker": "Heart Seeker",
+  "item.vampirismtinker.tic_heart_seeker.description": "A rapier only used by vampires, drains the blood of creatures to nourish its wielder\\nBecomes more powerful in the hands of an advanced vampire!",
+
+  "modifier.vampirismtinker.crucio": "Crucio",
+  "modifier.vampirismtinker.crucio.flavor": "It's so hurt!",
+  "modifier.vampirismtinker.crucio.description": "Just like Tic2 repair",
+
+  "item.vampirismtinker.tic_crucifix": "Huge Crucifix",
+  "item.vampirismtinker.tic_crucifix.description": "A massive crucifix wielded exclusively by vampire hunters. Critical hits inflict horrific wounds to all creatures in a wide area and deal 10x damage to undead\\nGrows deadlier in the hands of an experienced hunter!",
+
+  "modifier.vampirismtinker.catholic_vampire_hunt": "Catholic Vampire Hunt",
+  "modifier.vampirismtinker.catholic_vampire_hunt.flavor": "\"Then Jesus said to him, 'Away with you, Satan! For it is written: You shall worship the Lord your God, and Him only you shall serve.'\" - (Matthew 4:10)",
+  "modifier.vampirismtinker.catholic_vampire_hunt.description": "The massive crucifix inflicts horrific area damage to nearby creatures",
+
+  "item.vampirismtinker.hunter_metal": "Hunter's metal",
+  "fluid.vampirismtinker.hunter_metal": "Molten hunter's metal",
+  "item.vampirismtinker.hunter_metal_bucket": "Molten hunter's metal bucket",
+
+  "item.vampirismtinker.holy_hunter_metal": "Holy hunter's metal",
+  "fluid.vampirismtinker.holy_hunter_metal": "Molten holy hunter's metal",
+  "item.vampirismtinker.holy_hunter_metal_bucket": "Molten holy hunter's metal bucket",
+
+  "fluid.vampirismtinker.holy_water": "Holy water",
+  "item.vampirismtinker.holy_water_bucket": "Holy water bucket",
+
+  "material.vampirismtinker.hunter_metal": "Hunter's Metal",
+  "material.vampirismtinker.hunter_metal.flavor": "A mystically blessed metal used exclusively by hunters\nThy will be done on earth as it is in heaven.",
+  "material.vampirismtinker.hunter_metal.encyclopedia": "Deals bonus damage to vampires and undead (scales with hunter level) and ignites them",
+  "material.vampirismtinker.hunter_metal.armor": "Reduces damage from vampires and undead (scales with hunter level) and ignites them",
+
+  "modifier.vampirismtinker.inscribed_prayers": "Inscribed Prayers",
+  "modifier.vampirismtinker.inscribed_prayers.flavor": "Especially effective against undead creatures",
+  "modifier.vampirismtinker.inscribed_prayers.description": "\"Ye are of God, little children, and have overcome them: because greater is he that is in you, than he that is in the world.\" - (1 John 4:4)",
+
+  "modifier.vampirismtinker.inscribed_prayers_armor": "Inscribed Prayers",
+  "modifier.vampirismtinker.inscribed_prayers_armor.flavor": "Especially effective against undead creatures",
+  "modifier.vampirismtinker.inscribed_prayers_armor.description": "\"Ye are of God, little children, and have overcome them: because greater is he that is in you, than he that is in the world.\" - (1 John 4:4)",
+
+  "material.vampirismtinker.holy_hunter_metal": "Holy Hunter's Metal",
+  "material.vampirismtinker.holy_hunter_metal.flavor": "Metal consecrated by Christ Himself, wielded only by hunters\nLead us not into temptation, but deliver us from evil.",
+  "material.vampirismtinker.holy_hunter_metal.encyclopedia": "Drains vitality from vampires and undead (scales with hunter level) and nullifies their regeneration",
+  "material.vampirismtinker.holy_hunter_metal.armor": "Drastically reduces damage from vampires/undead (scales with hunter level) and grants near-boundless vitality",
+
+  "modifier.vampirismtinker.angel_dust": "Angel's Dust",
+  "modifier.vampirismtinker.angel_dust.flavor": "Before me, the undead dare not tread",
+  "modifier.vampirismtinker.angel_dust.description": "\"O my Father, if it be possible, let this cup pass from me: nevertheless not as I will, but as thou wilt.\" - (Matthew 26:39)",
+  "effect.vampirismtinker.judgment": "Divine Judgment",
+
+  "modifier.vampirismtinker.holy_roman_reborn_warrior": "Holy Roman Reborn Warrior",
+  "modifier.vampirismtinker.holy_roman_reborn_warrior.flavor": "Vampire, you're not the only one with weapons",
+  "modifier.vampirismtinker.holy_roman_reborn_warrior.description": "No more bluffs, come at me! Hurry! Hurry!",
+
+  "effect.vampirismtinker.silver_flame_brand": "Silverflame Brand",
+  "text.vampirismtinker.silver_flame_brand": "Holy silver etches Revelation verses into flesh, each stroke hissing like a branding iron",
+
+  "material.vampirismtinker.blood_infused_iron": "Blood-Infused Iron",
+  "material.vampirismtinker.blood_infused_iron.flavor": "A cursed metal forged through blood sacrifice, used only by vampires\nThose who touch it hear the dying prayers of 13th-century martyred nuns",
+  "material.vampirismtinker.blood_infused_iron.encyclopedia": "Siphons life to empower its wielder",
+  "material.vampirismtinker.blood_infused_iron.armor": "Grants supernatural regeneration when shielded from sunlight",
+
+  "fluid.vampirismtinker.blood_infused_iron": "Molten Blood-Iron",
+  "item.vampirismtinker.blood_infused_iron_bucket": "Bucket of Molten Blood-Iron",
+
   "modifier.vampirismtinker.blood_charging": "Blood Charging",
-  "blood_charging.text": "Blood Charging"
+  "modifier.vampirismtinker.blood_charging.flavor": "\"Whatsoever Israelite or stranger that eateth blood, I will cut him off from among his people\" - (Leviticus 17:10)",
+  "modifier.vampirismtinker.blood_charging.description": "Heartseekers drain life to empower themselves",
+  "blood_charging.text": "Blood Charge ",
+
+  "modifier.vampirismtinker.midnight_aristocrat": "Midnight Aristocrat",
+  "modifier.vampirismtinker.midnight_aristocrat.flavor": "Flesh mends like blood-soaked tapestry",
+  "modifier.vampirismtinker.midnight_aristocrat.description": "Without light, slaying a vampire becomes near impossible",
+  "midnight_aristocrat.text": "Midnight Noble",
+
+  "effect.vampirismtinker.blood_curse_erosion": "Bloodcurse Corrosion",
+  "text.vampirismtinker.blood_curse_erosion": "You hear a second heartbeat synchronizing—not yours, but some ancient being's mockery.",
+
+  "material.vampirismtinker.blood_infused_enhanced_iron": "Enhanced Blood-Iron",
+  "material.vampirismtinker.blood_infused_enhanced_iron.flavor": "A superior vampiric metal infused with elder magic\nCarries the final whispers of 13th-century martyred nuns",
+  "material.vampirismtinker.blood_infused_enhanced_iron.encyclopedia": "Inflicts Scarlet Fever",
+  "material.vampirismtinker.blood_infused_enhanced_iron.armor": "Elegantly evades attacks in darkness; sacrifices armor to resurrect",
+
+  "fluid.vampirismtinker.blood_infused_enhanced_iron": "Molten Enhanced Blood-Iron",
+  "item.vampirismtinker.blood_infused_enhanced_iron_bucket": "Bucket of Molten Enhanced Blood-Iron",
+
+  "modifier.vampirismtinker.scarlet_frenzy": "Scarlet Fever",
+  "modifier.vampirismtinker.scarlet_frenzy.flavor": "Vampiric strikes induce Scarlet Fever",
+  "modifier.vampirismtinker.scarlet_frenzy.description": "Afflicted creatures hemorrhage life essence",
+  "effect.vampirismtinker.scarlet_frenzy": "Scarlet Fever",
+
+  "modifier.vampirismtinker.crimson_mist_dash": "Crimson Mist",
+  "modifier.vampirismtinker.crimson_mist_dash.flavor": "Become one with the fog",
+  "modifier.vampirismtinker.crimson_mist_dash.description": "Without sunlight, vampires dissolve into mist to evade harm",
+
+  "modifier.vampirismtinker.un_dying": "Undying",
+  "modifier.vampirismtinker.un_dying.flavor": "Monarch of Midnight",
+  "modifier.vampirismtinker.un_dying.description": "When slain in darkness, vampires resurrect by sacrificing their armor",
+
+  "modifier.vampirismtinker.vampirism": "No.FF0000 Crimson Haze",
+  "modifier.vampirismtinker.vampirism.flavor": "Blotting Out the Sun",
+  "modifier.vampirismtinker.vampirism.description": "Grants infinite blood reserves, spreads cursed soil, nullifies sunlight vulnerability and equipment decay"
 }

@@ -1,0 +1,32 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "check_trait_level": true,
+  "inputs": [
+    {
+      "item": "vampirism:vampire_fang"
+    },
+    {
+      "item": "vampirism:umbrella"
+    },
+    {
+      "item": "vampirism:vampire_fang"
+    },
+    {
+      "item": "vampirism:vampire_book"
+    },
+    {
+      "item": "vampirism:pure_blood_4"
+    }
+  ],
+  "level": {
+    "max": 1
+  },
+  "slots": {
+    "diadema": 1
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/armor/worn"
+  },
+  "result": "vampirismtinker:vampirism"
+}

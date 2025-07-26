@@ -9,6 +9,8 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+import static com.csdy.vampirismtinker.modifier.HunterBaseModifer.isVampireOrUndead;
+
 @Mixin(LivingEntity.class)
 public abstract class LivingHealthMixin {
 
@@ -19,6 +21,7 @@ public abstract class LivingHealthMixin {
     )
     private void onHeal(float p_21116_, CallbackInfo cir) {
         LivingEntity entity = (LivingEntity)(Object)this;
+        if (!isVampireOrUndead(entity)) return;
         if (entity.hasEffect(EffectsRegister.JUDGMENT.get())) {
             cir.cancel();
         }

@@ -63,7 +63,7 @@ public class CrimsonMistDash extends VampireBaseModifer implements DamageBlockMo
         ).normalize();
 
         //速度
-        double dashSpeed = 1.6;
+        double dashSpeed = 0.5;
         player.setDeltaMovement(
                 dashDirection.x * dashSpeed,
                 player.getDeltaMovement().y + 0.2,

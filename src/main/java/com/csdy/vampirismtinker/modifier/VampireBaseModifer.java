@@ -1,5 +1,7 @@
 package com.csdy.vampirismtinker.modifier;
 
+
+import com.csdy.vampirismtinker.diadema.DiademaRegister;
 import com.csdy.vampirismtinker.effect.EffectsRegister;
 import de.teamlapen.vampirism.api.VampirismAPI;
 import de.teamlapen.vampirism.api.entity.player.vampire.IVampirePlayer;
@@ -37,10 +39,15 @@ import static com.csdy.vampirismtinker.modifier.method.ModifierUtil.forceAddEffe
 public class VampireBaseModifer extends Modifier implements MeleeDamageModifierHook, InventoryTickModifierHook, EquipmentChangeModifierHook {
     public static final float vampirePower = 0.2f;
 
+    private static boolean isWearingMartyrDiadema(Player player) {
+        return DiademaRegister.VAMPIRISM.get().isAffected(player);
+    }
+
     protected static boolean isTakingSundamage(Player player) {
         IVampirePlayer vampire = VampirismAPI.getVampirePlayer(player).orElse(null);
         if (player.hasEffect(EffectsRegister.JUDGMENT.get())) return true;
-        return vampire != null && vampire.isGettingSundamage(player.level());
+        if (isWearingMartyrDiadema(player)) return false;
+        return vampire.isGettingSundamage(player.level());
     }
 
     @Override

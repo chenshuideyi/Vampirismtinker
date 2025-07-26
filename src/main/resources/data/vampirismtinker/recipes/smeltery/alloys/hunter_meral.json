@@ -8,12 +8,12 @@
     },
     {
       "name": "tconstruct:molten_iron",
-      "amount": 90
+      "amount": 270
     }
   ],
   "result": {
     "fluid": "vampirismtinker:hunter_metal",
-    "amount": 90
+    "amount": 270
   },
   "temperature": 777
 }

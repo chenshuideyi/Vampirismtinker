@@ -1,10 +1,14 @@
 package com.csdy.vampirismtinker.modifier.register;
 
+import com.csdy.tcondiadema.modifier.CommonDiademaModifier;
+import com.csdy.tcondiadema.modifier.DiademaModifier;
+import com.csdy.vampirismtinker.diadema.DiademaRegister;
 import com.csdy.vampirismtinker.modifier.armor.hunter.HolyRomanRebornWarrior;
 import com.csdy.vampirismtinker.modifier.armor.hunter.InscribedPrayersArmor;
 import com.csdy.vampirismtinker.modifier.armor.vampire.CrimsonMistDash;
 import com.csdy.vampirismtinker.modifier.armor.vampire.MidnightAristocrat;
 import com.csdy.vampirismtinker.modifier.armor.vampire.UnDying;
+import com.csdy.vampirismtinker.modifier.diadema.VampireDiadema;
 import com.csdy.vampirismtinker.modifier.hunter.AngelDust;
 import com.csdy.vampirismtinker.modifier.hunter.InscribedPrayers;
 import com.csdy.vampirismtinker.modifier.tool.CatholicVampireHunt;
@@ -34,7 +38,8 @@ public class ModifierRegister {
     public static final StaticModifier<CrimsonMistDash> CRIMSON_MIST_DASH_STATIC_MODIFIER = MODIFIERS.register("crimson_mist_dash", CrimsonMistDash::new);
     public static final StaticModifier<UnDying> UN_DYING_STATIC_MODIFIER = MODIFIERS.register("un_dying", UnDying::new);
 
-
+    //领域
+    public static final StaticModifier<VampireDiadema> VAMPIRISM_STATIC_MODIFIER = MODIFIERS.register("vampirism", VampireDiadema::new);
 
 
 
